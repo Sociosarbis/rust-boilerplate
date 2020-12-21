@@ -1,4 +1,4 @@
-struct Solution {}
+use super::Solution;
 
 impl Solution {
     #[allow(dead_code)]

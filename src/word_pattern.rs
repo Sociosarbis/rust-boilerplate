@@ -1,6 +1,6 @@
 use std::collections::hash_map::HashMap;
 
-struct Solution {}
+use super::Solution;
 
 impl Solution {
   #[allow(dead_code)]
