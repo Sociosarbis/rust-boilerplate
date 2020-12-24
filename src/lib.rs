@@ -5,5 +5,6 @@ mod max_profit;
 mod find_the_difference;
 mod min_cost_climbing_stairs;
 mod zigzag_level_order;
+mod candy;
 
 pub struct Solution {}
