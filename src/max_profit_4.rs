@@ -62,6 +62,16 @@ mod tests {
         prices: vec![3,2,6,5,0,3],
         ret: 7,
       },
+      Suite {
+        k: 2,
+        prices: vec![1,2,4,2,5,7,2,4,9,0],
+        ret: 13,
+      },
+      Suite {
+        k: 2,
+        prices: vec![6,1,3,2,4,7],
+        ret: 7
+      }
     ];
 
     for s in suites {
