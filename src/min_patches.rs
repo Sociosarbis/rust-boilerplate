@@ -2,61 +2,28 @@ use super::Solution;
 
 impl Solution {
   pub fn min_patches(nums: Vec<i32>, n: i32) -> i32 {
-    let filtered_nums = nums.into_iter().filter(|item| { *item <= n }).collect::<Vec<i32>>();
-    let mut max_val: i32 = filtered_nums.iter().sum();
-    if max_val > n {
-      max_val = n;
-    }
-    let mut is_exists = vec![false; max_val as usize];
-    Solution::get_combinations(&filtered_nums, &mut is_exists, 0, 0);
-    let mut i = 0;
     let mut ret = 0;
-    while i < n as usize && i < is_exists.len() as usize {
-      if !is_exists[i] {
+    // 表示[0, x)间的数字可覆盖
+    let mut x = 1;
+    let mut i = 0;
+    while x <= n {
+      // 当nums[i] 在区间内或与区间相接的时候，直接增大可覆盖范围
+      // 此时不需要立刻更新nums[i + 1]...的范围，因为后面也会用上nums[i]的值
+      if i < nums.len() && nums[i] <= x {
+        x += nums[i];
+        i +=1;
+      } else {
         ret += 1;
-        let tmp_is_exists = is_exists.to_owned();
-        let left = if i > 0 { i - 1 } else { 0 }; 
-        for j in (left..tmp_is_exists.len()).rev() {
-          if tmp_is_exists[j] {
-            let k = j + i + 1;
-            if k < n as usize {
-              if is_exists.len() <= k {
-                is_exists.resize(k + 1, false);
-              }
-              if !is_exists[k] {
-                is_exists[k] = true;
-              }
-            }
-          }
+        if x < 1073741824 {
+          // 相当于[0, x) + [x, x)，因为数字x刚好不在区间内，范围最大的可增加的值
+          // 如果是 x - 1，增加的范围就比 x小，如果是x + 1则不能覆盖 x
+          x <<= 1;
+        } else {
+          break;
         }
-        is_exists[i] = true;
-      }
-      i += i + 1;
-    }
-    if i > 0 {
-      i -= 1;
-    }
-    while i < n as usize {
-      ret += 1;
-      i += i + 1;
-      if n as usize > i && n as usize - i < i + 1 {
-        ret += 1;
-        break;
       }
     }
     ret
-  }
-
-  fn get_combinations(nums:&Vec<i32>, combinations: &mut Vec<bool>, i: usize, prev: i32) {
-    for j in i..nums.len() {
-      let num = nums[j] + prev;
-      if num <= combinations.len() as i32 && !combinations[num as usize - 1] {
-        combinations[num as usize - 1] = true;
-      } else {
-        continue
-      }
-      Solution::get_combinations(nums, combinations, j + 1, num);
-    }
   }
 }
 
