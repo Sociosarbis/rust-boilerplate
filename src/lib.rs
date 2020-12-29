@@ -7,5 +7,6 @@ mod min_cost_climbing_stairs;
 mod zigzag_level_order;
 mod candy;
 mod max_profit_4;
+mod min_patches;
 
 pub struct Solution {}
