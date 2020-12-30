@@ -8,5 +8,6 @@ mod zigzag_level_order;
 mod candy;
 mod max_profit_4;
 mod min_patches;
+mod last_stone_weight;
 
 pub struct Solution {}
