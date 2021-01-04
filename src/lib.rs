@@ -10,5 +10,6 @@ mod max_profit_4;
 mod min_patches;
 mod last_stone_weight;
 mod erase_overlap_intervals;
+mod fib;
 
 pub struct Solution {}
