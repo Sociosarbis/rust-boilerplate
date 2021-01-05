@@ -11,5 +11,6 @@ mod min_patches;
 mod last_stone_weight;
 mod erase_overlap_intervals;
 mod fib;
+mod large_group_positions;
 
 pub struct Solution {}
