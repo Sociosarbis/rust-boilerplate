@@ -12,5 +12,6 @@ mod last_stone_weight;
 mod erase_overlap_intervals;
 mod fib;
 mod large_group_positions;
+mod calc_equation;
 
 pub struct Solution {}
