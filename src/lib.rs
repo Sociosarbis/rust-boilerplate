@@ -13,5 +13,6 @@ mod erase_overlap_intervals;
 mod fib;
 mod large_group_positions;
 mod calc_equation;
+mod find_circle_num;
 
 pub struct Solution {}
