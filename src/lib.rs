@@ -14,5 +14,6 @@ mod fib;
 mod large_group_positions;
 mod calc_equation;
 mod find_circle_num;
+mod rotate;
 
 pub struct Solution {}
