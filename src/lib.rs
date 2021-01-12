@@ -15,5 +15,7 @@ mod large_group_positions;
 mod calc_equation;
 mod find_circle_num;
 mod rotate;
+mod smallest_string_with_swaps;
+mod sort_items;
 
 pub struct Solution {}
