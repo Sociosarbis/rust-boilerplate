@@ -4,11 +4,6 @@ impl Solution {
   pub fn sort_items(n: i32, m: i32, group: Vec<i32>, before_items: Vec<Vec<i32>>) -> Vec<i32> {
     let mut groups: Vec<Vec<i32>> = vec![vec![]; m as usize];
     let mut outer: Vec<i32> = vec![];
-    for i in 0..(n as usize) {
-      if group[i] != -1 {
-        groups[group[i] as usize].push(i as i32);
-      }
-    }
     let a = (n as usize) + (m as usize);
     let mut ret: Vec<i32> = vec![];
     let mut tp: Vec<Vec<i32>> = vec![vec![]; a];
@@ -38,81 +33,18 @@ impl Solution {
     }
 
     let mut has_add: Vec<bool> = vec![false; a];
+    let mut visited: Vec<bool> = vec![false;a];
     for i in 0..a {
-      if !has_add[i] {
-        if !tp[i].is_empty() {
-          if i >= n as usize || group[i] == -1 {
-            let mut bfs: Vec<i32> = tp[i].to_owned();
-            let mut visited: Vec<bool> = vec![false; a];
-            visited[i] = true;
-            outer.push(i as i32);
-            has_add[i] = true;
-            while !bfs.is_empty() {
-              let cur = bfs.remove(0);
-              if visited[cur as usize] {
-                return ret;
-              }
-              if !has_add[cur as usize] {
-                if !tp[cur as usize].is_empty() {
-                  for item in &tp[cur as usize] {
-                    if !has_add[*item as usize] {
-                      bfs.push(*item);
-                    }
-                  }
-                }
-                visited[cur as usize] = true;
-                outer.push(cur);
-                has_add[cur as usize] = true;
-              }
-            }
-          } else {
-            let mut new_group = vec![];
-            let g = &groups[group[i] as usize];
-            for j in 0..g.len() {
-              let item = g[j];
-              println!("{:?}:{:?}:{:?}", item, g, new_group);
-              if !has_add[item as usize] {
-                if !tp[item as usize].is_empty() {
-                  let mut bfs: Vec<i32> = tp[item as usize].to_owned();
-                  let mut visited: Vec<bool> = vec![false; a];
-                  visited[item as usize] = true;
-                  new_group.push(item);
-                  has_add[item as usize] = true;
-                  while !bfs.is_empty() {
-                    let cur = bfs.remove(0);
-                    if visited[cur as usize] {
-                      return ret;
-                    }
-                    if !has_add[cur as usize] {
-                      if !tp[cur as usize].is_empty() {
-                        for item in &tp[cur as usize] {
-                          if !has_add[*item as usize] {
-                            bfs.push(*item);
-                          }
-                        }
-                      }
-                      println!("{:?}", has_add[cur as usize]);
-                      visited[cur as usize] = true;
-                      new_group.push(cur);
-                      has_add[cur as usize] = true;
-                    }
-                  }
-                } else {
-                  has_add[item as usize] = true;
-                  new_group.push(item);
-                }
-              }
-            }
-            groups[group[i] as usize] = new_group;
-          }
-        } else if i >= n as usize || group[i] == -1 {
-          has_add[i] = true;
-          outer.push(i as i32);
+      if i >= n as usize || group[i] == -1 {
+        if !Solution::sort_items_dfs(i as i32, &mut outer, &mut has_add, &mut tp, &mut visited) {
+            return ret;
+        }
+      } else {
+        if !Solution::sort_items_dfs(i as i32, &mut groups[group[i] as usize], &mut has_add, &mut tp, &mut visited) {
+          return ret;
         }
       }
     }
-
-    println!("{:?}:{:?}", outer, groups);
 
     for item in outer {
       if item >= n {
@@ -122,6 +54,30 @@ impl Solution {
       }
     }
     ret
+  }
+
+  pub fn sort_items_dfs(i: i32, new_group: &mut Vec<i32>, has_add: &mut Vec<bool>, tp: &mut Vec<Vec<i32>>, visited: &mut Vec<bool>) -> bool {
+    if !has_add[i as usize] {
+      if visited[i as usize] {
+        return false;
+      }
+      visited[i as usize] = true;
+      if !tp[i as usize].is_empty() {
+        for item in tp[i as usize].to_owned() {
+          if !has_add[item as usize] {
+              if !Solution::sort_items_dfs(item, new_group, has_add, tp, visited) {
+                return false;
+              }
+          }
+        }
+      }
+      visited[i as usize] = false;
+      if !has_add[i as usize] {
+        has_add[i as usize] = true;
+        new_group.push(i);
+      }
+    }
+    return true;
   }
 }
 
@@ -154,7 +110,7 @@ mod tests {
           vec![],
           vec![],
         ],
-        ret: vec![6, 3, 4, 1, 5, 2, 0, 7],
+        ret: vec![0, 6, 3, 4, 1, 7, 5, 2],
       },
       Suite {
         n: 8,
