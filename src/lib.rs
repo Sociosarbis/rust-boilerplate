@@ -18,5 +18,6 @@ mod rotate;
 mod smallest_string_with_swaps;
 mod sort_items;
 mod find_redundant_connection;
+mod prefixes_div_by5;
 
 pub struct Solution {}
