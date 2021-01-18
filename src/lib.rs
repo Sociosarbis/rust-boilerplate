@@ -20,5 +20,18 @@ mod sort_items;
 mod find_redundant_connection;
 mod prefixes_div_by5;
 mod remove_stones;
+mod accounts_merge;
 
 pub struct Solution {}
+
+impl Solution {
+  pub fn t1(source: Vec<&str>) -> Vec<String> {
+    source.into_iter().map(|s| { s.to_owned() }).collect()
+  }
+
+  pub fn t2(source: Vec<Vec<&str>>) -> Vec<Vec<String>> {
+    source.into_iter().map(|a| {
+      Solution::t1(a)
+    }).collect()
+  }
+}
