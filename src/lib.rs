@@ -21,6 +21,7 @@ mod find_redundant_connection;
 mod prefixes_div_by5;
 mod remove_stones;
 mod accounts_merge;
+mod min_cost_connect_points;
 
 pub struct Solution {}
 
@@ -33,5 +34,13 @@ impl Solution {
     source.into_iter().map(|a| {
       Solution::t1(a)
     }).collect()
+  }
+
+  pub fn t1_i(source: &[i32]) -> Vec<i32> {
+    source.to_owned()
+  }
+
+  pub fn t2_i(source: Vec<&[i32]>) -> Vec<Vec<i32>> {
+    source.into_iter().map(|s| { Solution::t1_i(s)}).collect()
   }
 }
