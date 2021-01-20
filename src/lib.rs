@@ -22,6 +22,7 @@ mod prefixes_div_by5;
 mod remove_stones;
 mod accounts_merge;
 mod min_cost_connect_points;
+mod maximum_product;
 
 pub struct Solution {}
 
