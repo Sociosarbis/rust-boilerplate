@@ -23,6 +23,7 @@ mod remove_stones;
 mod accounts_merge;
 mod min_cost_connect_points;
 mod maximum_product;
+mod find_critical_and_pseudo_critical_edges;
 
 pub struct Solution {}
 
