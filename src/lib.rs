@@ -26,6 +26,7 @@ mod maximum_product;
 mod find_critical_and_pseudo_critical_edges;
 mod add_to_array_form;
 mod regions_by_slashes;
+mod num_equiv_domino_pairs;
 
 pub struct Solution {}
 
