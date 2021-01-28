@@ -28,6 +28,7 @@ mod add_to_array_form;
 mod regions_by_slashes;
 mod num_equiv_domino_pairs;
 mod max_num_edges_to_remove;
+mod pivot_index;
 
 pub struct Solution {}
 
