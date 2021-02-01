@@ -30,6 +30,7 @@ mod num_equiv_domino_pairs;
 mod max_num_edges_to_remove;
 mod pivot_index;
 mod minimum_effort_path;
+mod fair_candy_swap;
 
 pub struct Solution {}
 
