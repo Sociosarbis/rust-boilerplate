@@ -31,6 +31,7 @@ mod max_num_edges_to_remove;
 mod pivot_index;
 mod minimum_effort_path;
 mod fair_candy_swap;
+mod median_sliding_window;
 
 pub struct Solution {}
 
@@ -51,5 +52,30 @@ impl Solution {
 
   pub fn t2_i(source: Vec<&[i32]>) -> Vec<Vec<i32>> {
     source.into_iter().map(|s| { Solution::t1_i(s)}).collect()
+  }
+
+  pub fn binary_search(nums: &Vec<i32>, target: i32, is_insert: bool) -> i32 {
+    if nums.is_empty() {
+      return if is_insert { 0 } else { -1 };
+    }
+    let mut l = 0;
+    let mut r = nums.len() - 1;
+    while l <= r {
+      let mid = (l + r) / 2;
+      if nums[mid] < target {
+        l = mid + 1;
+        if l > r {
+          return if is_insert { l as i32 } else { -1 }
+        }
+      } else if nums[mid] > target {
+        if mid == 0 || mid - 1 < l {
+          return if is_insert { mid as i32 } else { -1 };
+        }
+        r = mid - 1;
+      } else {
+        return mid as i32;
+      }
+    }
+    0
   }
 }
