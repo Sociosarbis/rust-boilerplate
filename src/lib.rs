@@ -33,6 +33,7 @@ mod minimum_effort_path;
 mod fair_candy_swap;
 mod median_sliding_window;
 mod find_max_average;
+mod equal_substring;
 
 pub struct Solution {}
 
