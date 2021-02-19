@@ -34,6 +34,7 @@ mod fair_candy_swap;
 mod median_sliding_window;
 mod find_max_average;
 mod equal_substring;
+mod longest_ones;
 
 pub struct Solution {}
 
