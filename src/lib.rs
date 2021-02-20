@@ -35,6 +35,7 @@ mod median_sliding_window;
 mod find_max_average;
 mod equal_substring;
 mod longest_ones;
+mod find_shortest_sub_array;
 
 pub struct Solution {}
 
