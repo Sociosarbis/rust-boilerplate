@@ -38,6 +38,7 @@ mod longest_ones;
 mod find_shortest_sub_array;
 mod longest_subarray;
 mod is_toeplitz_matrix;
+mod max_satisfied;
 
 pub struct Solution {}
 
