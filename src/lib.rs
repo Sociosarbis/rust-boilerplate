@@ -39,6 +39,7 @@ mod find_shortest_sub_array;
 mod longest_subarray;
 mod is_toeplitz_matrix;
 mod max_satisfied;
+mod flip_and_invert_image;
 
 pub struct Solution {}
 
