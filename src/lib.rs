@@ -40,6 +40,7 @@ mod longest_subarray;
 mod is_toeplitz_matrix;
 mod max_satisfied;
 mod flip_and_invert_image;
+mod transpose;
 
 pub struct Solution {}
 
