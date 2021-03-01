@@ -41,6 +41,7 @@ mod is_toeplitz_matrix;
 mod max_satisfied;
 mod flip_and_invert_image;
 mod transpose;
+mod sum_range;
 
 pub struct Solution {}
 
