@@ -42,6 +42,7 @@ mod max_satisfied;
 mod flip_and_invert_image;
 mod transpose;
 mod sum_range;
+mod sum_region;
 
 pub struct Solution {}
 
