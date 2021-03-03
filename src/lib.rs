@@ -43,6 +43,7 @@ mod flip_and_invert_image;
 mod transpose;
 mod sum_range;
 mod sum_region;
+mod count_bits;
 
 pub struct Solution {}
 
