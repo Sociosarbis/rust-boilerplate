@@ -44,6 +44,7 @@ mod transpose;
 mod sum_range;
 mod sum_region;
 mod count_bits;
+mod max_envelopes;
 
 pub struct Solution {}
 
