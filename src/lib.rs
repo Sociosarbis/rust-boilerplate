@@ -45,6 +45,7 @@ mod sum_range;
 mod sum_region;
 mod count_bits;
 mod max_envelopes;
+mod min_cut;
 
 pub struct Solution {}
 
