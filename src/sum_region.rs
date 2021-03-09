@@ -1,10 +1,11 @@
+#[allow(dead_code)]
 struct NumMatrix {
   sum_left: Vec<Vec<i32>>,
   sum_right: Vec<Vec<i32>>
 }
 
 impl NumMatrix {
-
+    #[allow(dead_code)]
     fn new(matrix: Vec<Vec<i32>>) -> Self {
       if matrix.is_empty() || matrix[0].is_empty() {
         return NumMatrix {
@@ -30,7 +31,7 @@ impl NumMatrix {
         sum_right: sum_right
       }
     }
-    
+    #[allow(dead_code)]
     fn sum_region(&self, row1: i32, col1: i32, row2: i32, col2: i32) -> i32 {
       if self.sum_left.is_empty() {
         return 0;

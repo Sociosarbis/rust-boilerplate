@@ -1,10 +1,11 @@
+#[allow(dead_code)]
 struct NumArray {
   sum_left: Vec<i32>,
   sum_right: Vec<i32>
 }
 
 impl NumArray {
-
+    #[allow(dead_code)]
     fn new(nums: Vec<i32>) -> Self {
       if nums.is_empty() {
         return NumArray {
@@ -28,7 +29,7 @@ impl NumArray {
         sum_right: sum_right,
       }
     }
-    
+    #[allow(dead_code)]
     fn sum_range(&self, i: i32, j: i32) -> i32 {
       if self.sum_left.is_empty() {
         return 0;
