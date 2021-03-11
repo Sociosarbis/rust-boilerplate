@@ -48,6 +48,7 @@ mod max_envelopes;
 mod min_cut;
 mod remove_duplicates;
 mod calculate;
+mod calculate2;
 
 pub struct Solution {}
 
