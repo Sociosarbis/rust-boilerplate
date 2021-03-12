@@ -49,6 +49,7 @@ mod min_cut;
 mod remove_duplicates;
 mod calculate;
 mod calculate2;
+mod is_valid_serialization;
 
 pub struct Solution {}
 
