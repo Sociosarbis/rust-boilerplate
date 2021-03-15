@@ -50,6 +50,7 @@ mod remove_duplicates;
 mod calculate;
 mod calculate2;
 mod is_valid_serialization;
+mod spiral_order;
 
 pub struct Solution {}
 
