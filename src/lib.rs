@@ -51,6 +51,7 @@ mod calculate;
 mod calculate2;
 mod is_valid_serialization;
 mod spiral_order;
+mod generate_matrix;
 
 pub struct Solution {}
 
