@@ -55,6 +55,7 @@ mod generate_matrix;
 mod num_distinct;
 mod parking_system;
 mod reverse_between;
+mod hamming_weight;
 
 pub struct Solution {}
 
