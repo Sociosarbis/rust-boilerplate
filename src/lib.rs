@@ -57,6 +57,7 @@ mod parking_system;
 mod reverse_between;
 mod hamming_weight;
 mod nested_iterator;
+mod find132pattern;
 
 pub struct Solution {}
 
