@@ -58,6 +58,7 @@ mod reverse_between;
 mod hamming_weight;
 mod nested_iterator;
 mod find132pattern;
+mod delete_duplicates;
 
 pub struct Solution {}
 
