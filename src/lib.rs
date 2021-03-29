@@ -60,6 +60,7 @@ mod nested_iterator;
 mod find132pattern;
 mod delete_duplicates;
 mod delete_duplicates_2;
+mod reverse_bits;
 
 pub struct Solution {}
 
