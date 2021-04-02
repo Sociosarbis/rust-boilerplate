@@ -63,6 +63,7 @@ mod delete_duplicates_2;
 mod reverse_bits;
 mod search_matrix;
 mod clumsy;
+mod trap;
 
 pub struct Solution {}
 
