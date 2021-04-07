@@ -64,6 +64,7 @@ mod reverse_bits;
 mod search_matrix;
 mod clumsy;
 mod trap;
+mod search;
 
 pub struct Solution {}
 
