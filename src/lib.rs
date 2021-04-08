@@ -65,6 +65,7 @@ mod search_matrix;
 mod clumsy;
 mod trap;
 mod search;
+mod find_min;
 
 pub struct Solution {}
 
