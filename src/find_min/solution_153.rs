@@ -1,4 +1,4 @@
-use super::Solution;
+use crate::Solution;
 
 
 impl Solution {
@@ -43,7 +43,7 @@ mod tests {
   }
 
   #[test]
-  fn test_search_simple() {
+  fn test_find_min_simple() {
     let suites = vec![
       Suite {
         nums: vec![3,4,5,1,2],
