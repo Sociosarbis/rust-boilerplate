@@ -66,6 +66,7 @@ mod clumsy;
 mod trap;
 mod search;
 mod find_min;
+mod largest_number;
 
 pub struct Solution {}
 
