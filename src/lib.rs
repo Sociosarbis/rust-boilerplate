@@ -68,6 +68,7 @@ mod search;
 mod find_min;
 mod largest_number;
 mod min_diff_in_bst;
+mod trie;
 
 pub struct Solution {}
 
