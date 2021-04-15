@@ -1,7 +1,6 @@
-use super::*;
-
 use std::collections::HashMap;
 
+#[allow(dead_code)]
 struct Trie {
   has_stop: bool,
   children: HashMap<char, Trie>
@@ -15,6 +14,7 @@ struct Trie {
 impl Trie {
 
     /** Initialize your data structure here. */
+    #[allow(dead_code)]
     fn new() -> Self {
       Trie {
         has_stop: false,
@@ -23,6 +23,7 @@ impl Trie {
     }
     
     /** Inserts a word into the trie. */
+    #[allow(dead_code)]
     fn insert(&mut self, word: String) {
       let mut cur = self;
       let chars: Vec<char> = word.chars().collect();
@@ -36,6 +37,7 @@ impl Trie {
     }
     
     /** Returns if the word is in the trie. */
+    #[allow(dead_code)]
     fn search(&mut self, word: String) -> bool {
       let mut cur = self;
       let chars: Vec<char> = word.chars().collect();
@@ -49,6 +51,7 @@ impl Trie {
     }
     
     /** Returns if there is any word in the trie that starts with the given prefix. */
+    #[allow(dead_code)]
     fn starts_with(&mut self, prefix: String) -> bool {
       let mut cur = self;
       let chars: Vec<char> = prefix.chars().collect();
