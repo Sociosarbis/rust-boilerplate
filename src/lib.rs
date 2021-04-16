@@ -70,6 +70,7 @@ mod largest_number;
 mod min_diff_in_bst;
 mod trie;
 mod rob;
+mod is_scramble;
 
 pub struct Solution {}
 
