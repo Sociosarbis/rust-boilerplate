@@ -71,6 +71,7 @@ mod min_diff_in_bst;
 mod trie;
 mod rob;
 mod is_scramble;
+mod remove_element;
 
 pub struct Solution {}
 
