@@ -72,6 +72,7 @@ mod trie;
 mod rob;
 mod is_scramble;
 mod remove_element;
+mod str_str;
 
 pub struct Solution {}
 
