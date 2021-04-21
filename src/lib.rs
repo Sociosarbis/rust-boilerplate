@@ -73,6 +73,7 @@ mod rob;
 mod is_scramble;
 mod remove_element;
 mod str_str;
+mod num_decodings;
 
 pub struct Solution {}
 
