@@ -74,6 +74,7 @@ mod is_scramble;
 mod remove_element;
 mod str_str;
 mod num_decodings;
+mod max_sum_submatrix;
 
 pub struct Solution {}
 
