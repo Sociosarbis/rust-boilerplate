@@ -76,6 +76,7 @@ mod str_str;
 mod num_decodings;
 mod max_sum_submatrix;
 mod largest_divisible_subset;
+mod increasing_bst;
 
 pub struct Solution {}
 
