@@ -77,6 +77,7 @@ mod num_decodings;
 mod max_sum_submatrix;
 mod largest_divisible_subset;
 mod increasing_bst;
+mod ship_within_days;
 
 pub struct Solution {}
 
