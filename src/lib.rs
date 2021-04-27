@@ -78,6 +78,7 @@ mod max_sum_submatrix;
 mod largest_divisible_subset;
 mod increasing_bst;
 mod ship_within_days;
+mod range_sum_bst;
 
 pub struct Solution {}
 
