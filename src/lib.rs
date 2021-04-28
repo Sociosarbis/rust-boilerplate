@@ -79,6 +79,7 @@ mod largest_divisible_subset;
 mod increasing_bst;
 mod ship_within_days;
 mod range_sum_bst;
+mod judge_square_sum;
 
 pub struct Solution {}
 
