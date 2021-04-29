@@ -80,6 +80,7 @@ mod increasing_bst;
 mod ship_within_days;
 mod range_sum_bst;
 mod judge_square_sum;
+mod can_cross;
 
 pub struct Solution {}
 
