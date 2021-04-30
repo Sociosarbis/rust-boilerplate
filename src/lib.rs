@@ -81,6 +81,7 @@ mod ship_within_days;
 mod range_sum_bst;
 mod judge_square_sum;
 mod can_cross;
+mod single_number;
 
 pub struct Solution {}
 
