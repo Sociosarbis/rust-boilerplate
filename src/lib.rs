@@ -82,6 +82,7 @@ mod range_sum_bst;
 mod judge_square_sum;
 mod can_cross;
 mod single_number;
+mod decode;
 
 pub struct Solution {}
 
