@@ -83,6 +83,7 @@ mod judge_square_sum;
 mod can_cross;
 mod single_number;
 mod decode;
+mod xor_operation;
 
 pub struct Solution {}
 
