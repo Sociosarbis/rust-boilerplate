@@ -84,6 +84,7 @@ mod can_cross;
 mod single_number;
 mod decode;
 mod xor_operation;
+mod minimum_time_required;
 
 pub struct Solution {}
 
