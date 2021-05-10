@@ -85,6 +85,7 @@ mod single_number;
 mod decode;
 mod xor_operation;
 mod minimum_time_required;
+mod leaf_similar;
 
 pub struct Solution {}
 
