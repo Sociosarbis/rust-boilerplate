@@ -86,6 +86,7 @@ mod decode;
 mod xor_operation;
 mod minimum_time_required;
 mod leaf_similar;
+mod xor_queries;
 
 pub struct Solution {}
 
