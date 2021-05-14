@@ -87,6 +87,8 @@ mod xor_operation;
 mod minimum_time_required;
 mod leaf_similar;
 mod xor_queries;
+mod num_ways;
+mod int_to_roman;
 
 pub struct Solution {}
 
