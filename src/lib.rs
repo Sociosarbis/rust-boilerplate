@@ -89,6 +89,7 @@ mod leaf_similar;
 mod xor_queries;
 mod num_ways;
 mod int_to_roman;
+mod is_cousins;
 
 pub struct Solution {}
 
