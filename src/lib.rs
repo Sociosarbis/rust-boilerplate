@@ -90,6 +90,7 @@ mod xor_queries;
 mod num_ways;
 mod int_to_roman;
 mod is_cousins;
+mod count_triplets;
 
 pub struct Solution {}
 
