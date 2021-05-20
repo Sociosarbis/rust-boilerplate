@@ -92,6 +92,7 @@ mod int_to_roman;
 mod is_cousins;
 mod count_triplets;
 mod kth_largest_value;
+mod top_k_frequent;
 
 pub struct Solution {}
 
