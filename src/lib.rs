@@ -93,6 +93,7 @@ mod is_cousins;
 mod count_triplets;
 mod kth_largest_value;
 mod top_k_frequent;
+mod max_uncrossed_lines;
 
 pub struct Solution {}
 
@@ -115,14 +116,14 @@ impl Solution {
     source.into_iter().map(|s| { Solution::t1_i(s)}).collect()
   }
 
-  pub fn binary_search(nums: &Vec<i32>, target: i32, is_insert: bool) -> i32 {
+  pub fn binary_search<T: Ord + Eq>(nums: &Vec<T>, target: T, is_insert: bool) -> i32 {
     if nums.is_empty() {
       return if is_insert { 0 } else { -1 };
     }
     return Solution::binary_search_general(nums, target, 0, nums.len() - 1, is_insert)
   }
 
-  pub fn binary_search_general(nums: &Vec<i32>, target: i32, i: usize, j: usize, is_insert: bool) -> i32 {
+  pub fn binary_search_general<T: Ord + Eq>(nums: &Vec<T>, target: T, i: usize, j: usize, is_insert: bool) -> i32 {
     let mut l = i;
     let mut r = j;
     while l <= r {
