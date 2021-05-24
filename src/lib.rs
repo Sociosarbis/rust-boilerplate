@@ -94,6 +94,7 @@ mod count_triplets;
 mod kth_largest_value;
 mod top_k_frequent;
 mod max_uncrossed_lines;
+mod strange_printer;
 
 pub struct Solution {}
 
