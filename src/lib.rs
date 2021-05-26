@@ -96,6 +96,7 @@ mod top_k_frequent;
 mod max_uncrossed_lines;
 mod strange_printer;
 mod min_changes;
+mod reverse_parentheses;
 
 pub struct Solution {}
 
