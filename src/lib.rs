@@ -97,6 +97,7 @@ mod max_uncrossed_lines;
 mod strange_printer;
 mod min_changes;
 mod reverse_parentheses;
+mod hamming_distance;
 
 pub struct Solution {}
 
