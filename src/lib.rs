@@ -99,6 +99,7 @@ mod min_changes;
 mod reverse_parentheses;
 mod hamming_distance;
 mod total_hamming_distance;
+mod is_power_of_four;
 
 pub struct Solution {}
 
