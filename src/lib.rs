@@ -102,6 +102,7 @@ mod total_hamming_distance;
 mod is_power_of_four;
 mod can_eat;
 mod check_subarray_sum;
+mod find_max_length;
 
 pub struct Solution {}
 
