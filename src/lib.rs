@@ -105,6 +105,7 @@ mod check_subarray_sum;
 mod find_max_length;
 mod max_points;
 mod open_lock;
+mod num_buses_to_destination;
 
 pub struct Solution {}
 
