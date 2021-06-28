@@ -2,7 +2,38 @@ use super::Solution;
 
 impl Solution {
   pub fn num_buses_to_destination(routes: Vec<Vec<i32>>, source: i32, target: i32) -> i32 {
-
+    if source == target {
+      return 0;
+    }
+    let mut dest_to_route = vec![vec![];1000000];
+    for i in 0..routes.len() {
+      for &dest in &routes[i] {
+        dest_to_route[dest as usize].push(i);
+      }
+    }
+    let mut count = 0;
+    let mut visited = vec![false;routes.len()];
+    let mut queue = vec![source];
+    while !queue.is_empty() {
+      count += 1;
+      let n = queue.len();
+      for i in 0..n {
+        for &j in &dest_to_route[queue[i] as usize] {
+          if !visited[j] {
+            visited[j] = true;
+            for &k in &routes[j] {
+              if k == target {
+                return count;
+              }
+              queue.push(k);
+            }
+          }
+        }
+        dest_to_route[queue[i] as usize].clear();
+      }
+      queue.drain(0..n);
+    }
+    -1
   }
 }
 
