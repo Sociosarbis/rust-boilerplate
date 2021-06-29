@@ -106,6 +106,7 @@ mod find_max_length;
 mod max_points;
 mod open_lock;
 mod num_buses_to_destination;
+mod convert_to_title;
 
 pub struct Solution {}
 
