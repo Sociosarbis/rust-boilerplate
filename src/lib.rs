@@ -107,6 +107,7 @@ mod max_points;
 mod open_lock;
 mod num_buses_to_destination;
 mod convert_to_title;
+mod max_ice_cream;
 
 pub struct Solution {}
 
