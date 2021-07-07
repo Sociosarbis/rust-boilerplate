@@ -110,6 +110,7 @@ mod convert_to_title;
 mod max_ice_cream;
 mod count_of_atoms;
 mod display_table;
+mod count_pairs;
 
 pub struct Solution {}
 
