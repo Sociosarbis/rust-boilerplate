@@ -111,6 +111,7 @@ mod max_ice_cream;
 mod count_of_atoms;
 mod display_table;
 mod count_pairs;
+mod num_subarrays_with_sum;
 
 pub struct Solution {}
 
