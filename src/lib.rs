@@ -112,6 +112,7 @@ mod count_of_atoms;
 mod display_table;
 mod count_pairs;
 mod num_subarrays_with_sum;
+mod majority_element;
 
 pub struct Solution {}
 
