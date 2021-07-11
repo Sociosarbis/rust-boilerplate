@@ -114,6 +114,7 @@ mod count_pairs;
 mod num_subarrays_with_sum;
 mod majority_element;
 mod time_map;
+mod h_index;
 
 pub struct Solution {}
 
