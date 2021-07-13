@@ -115,6 +115,7 @@ mod num_subarrays_with_sum;
 mod majority_element;
 mod time_map;
 mod h_index;
+mod get_skyline;
 
 pub struct Solution {}
 
