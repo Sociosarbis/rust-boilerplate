@@ -116,6 +116,7 @@ mod majority_element;
 mod time_map;
 mod h_index;
 mod get_skyline;
+mod min_absolute_sum_diff;
 
 pub struct Solution {}
 
