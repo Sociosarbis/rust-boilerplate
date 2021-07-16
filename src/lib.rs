@@ -118,6 +118,7 @@ mod h_index;
 mod get_skyline;
 mod min_absolute_sum_diff;
 mod maximum_element_after_decrementing_and_rearranging;
+mod search_lcof;
 
 pub struct Solution {}
 
