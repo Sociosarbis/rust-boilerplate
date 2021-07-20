@@ -120,6 +120,7 @@ mod min_absolute_sum_diff;
 mod maximum_element_after_decrementing_and_rearranging;
 mod search_lcof;
 mod max_frequency;
+mod min_pair_nums;
 
 pub struct Solution {}
 
