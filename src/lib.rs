@@ -122,6 +122,7 @@ mod search_lcof;
 mod max_frequency;
 mod min_pair_nums;
 mod is_covered;
+mod min_operations;
 
 pub struct Solution {}
 
