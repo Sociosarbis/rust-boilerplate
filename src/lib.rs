@@ -123,6 +123,7 @@ mod max_frequency;
 mod min_pair_nums;
 mod is_covered;
 mod min_operations;
+mod find_second_minimum_value;
 
 pub struct Solution {}
 
