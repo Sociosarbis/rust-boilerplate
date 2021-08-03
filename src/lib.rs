@@ -128,6 +128,7 @@ mod distance_k;
 mod path_in_zig_zag_tree;
 mod title_to_number;
 mod network_delay_time;
+mod find_unsorted_subarray;
 
 pub struct Solution {}
 
