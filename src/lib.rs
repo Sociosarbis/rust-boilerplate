@@ -130,6 +130,7 @@ mod title_to_number;
 mod network_delay_time;
 mod find_unsorted_subarray;
 mod triangle_number;
+mod eventual_safe_nodes;
 
 pub struct Solution {}
 
