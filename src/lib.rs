@@ -131,6 +131,7 @@ mod network_delay_time;
 mod find_unsorted_subarray;
 mod triangle_number;
 mod eventual_safe_nodes;
+mod shortest_path_length;
 
 pub struct Solution {}
 
