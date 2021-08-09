@@ -132,6 +132,7 @@ mod find_unsorted_subarray;
 mod triangle_number;
 mod eventual_safe_nodes;
 mod shortest_path_length;
+mod nth_super_ugly_number;
 
 pub struct Solution {}
 
