@@ -133,6 +133,7 @@ mod triangle_number;
 mod eventual_safe_nodes;
 mod shortest_path_length;
 mod nth_super_ugly_number;
+mod number_of_arithmetic_slices;
 
 pub struct Solution {}
 
