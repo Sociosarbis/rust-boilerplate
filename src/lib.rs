@@ -135,6 +135,7 @@ mod shortest_path_length;
 mod nth_super_ugly_number;
 mod number_of_arithmetic_slices;
 mod longest_palindrome_subseq;
+mod count_digit_one;
 
 pub struct Solution {}
 
