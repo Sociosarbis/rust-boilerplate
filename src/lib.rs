@@ -137,6 +137,7 @@ mod number_of_arithmetic_slices;
 mod longest_palindrome_subseq;
 mod count_digit_one;
 mod count_arrangement;
+mod check_record;
 
 pub struct Solution {}
 
