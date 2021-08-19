@@ -138,6 +138,7 @@ mod longest_palindrome_subseq;
 mod count_digit_one;
 mod count_arrangement;
 mod check_record;
+mod reverse_vowels;
 
 pub struct Solution {}
 
