@@ -139,6 +139,7 @@ mod count_digit_one;
 mod count_arrangement;
 mod check_record;
 mod reverse_vowels;
+mod reverse_str;
 
 pub struct Solution {}
 
