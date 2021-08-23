@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 impl Solution {
   pub fn open_lock(deadends: Vec<String>, target: String) -> i32 {
@@ -76,7 +76,7 @@ mod tests {
   use super::*;
 
   struct Suite<'a> {
-    deadends: Vec<&'a str>,
+    deadends: Vec<String>,
     target: &'a str,
     ret: i32
   }
@@ -85,29 +85,29 @@ mod tests {
   fn test_open_lock_simple() {
     let suites = vec![
       Suite {
-        deadends: vec!["0201","0101","0102","1212","2002"],
+        deadends: t1!["0201","0101","0102","1212","2002"],
         target: "0202",
         ret: 6
       },
       Suite {
-        deadends: vec!["8888"],
+        deadends: t1!["8888"],
         target: "0009",
         ret: 1
       },
       Suite {
-        deadends: vec!["8887","8889","8878","8898","8788","8988","7888","9888"],
+        deadends: t1!["8887","8889","8878","8898","8788","8988","7888","9888"],
         target: "8888",
         ret: -1
       },
       Suite {
-        deadends: vec!["0000"],
+        deadends: t1!["0000"],
         target: "8888",
         ret: -1
       }
     ];
 
     for s in suites {
-      assert_eq!(Solution::open_lock(Solution::t1(s.deadends), s.target.to_owned()), s.ret);
+      assert_eq!(Solution::open_lock(s.deadends, s.target.to_owned()), s.ret);
     }
   }
 }

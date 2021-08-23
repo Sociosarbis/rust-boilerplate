@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 use std::collections::HashMap;
 
 impl Solution {
@@ -72,8 +72,8 @@ mod tests {
   fn accounts_merge_simple() {
     let suites = vec![
       Suite {
-        accounts: Solution::t2(vec![vec!["John", "johnsmith@mail.com", "john00@mail.com"], vec!["John", "johnnybravo@mail.com"], vec!["John", "johnsmith@mail.com", "john_newyork@mail.com"], vec!["Mary", "mary@mail.com"]]),
-        ret: Solution::t2(vec![vec!["John", "john00@mail.com", "john_newyork@mail.com", "johnsmith@mail.com"],  vec!["John", "johnnybravo@mail.com"], vec!["Mary", "mary@mail.com"]])
+        accounts: t2![["John", "johnsmith@mail.com", "john00@mail.com"], ["John", "johnnybravo@mail.com"], ["John", "johnsmith@mail.com", "john_newyork@mail.com"], ["Mary", "mary@mail.com"]],
+        ret: t2![["John", "john00@mail.com", "john_newyork@mail.com", "johnsmith@mail.com"],  ["John", "johnnybravo@mail.com"], ["Mary", "mary@mail.com"]]
       }];
 
     for s in suites {

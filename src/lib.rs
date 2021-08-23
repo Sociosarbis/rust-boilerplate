@@ -141,25 +141,40 @@ mod check_record;
 mod reverse_vowels;
 mod reverse_str;
 
+#[macro_export]
+macro_rules! t2_i {
+  ($($l:expr),*) => {
+    Solution::t2_i(vec![$(&$l),*])
+  };
+}
+
+#[macro_export]
+macro_rules! t2 {
+  ($($l:expr),*) => {
+    Solution::t2(vec![$(&$l),*])
+  };
+}
+
+#[macro_export]
+macro_rules! t1 {
+  ($($l:expr),*) => {
+    vec![$($l.to_owned()),*]
+  };
+}
+
+
 pub struct Solution {}
 
 impl Solution {
-  pub fn t1(source: Vec<&str>) -> Vec<String> {
-    source.into_iter().map(|s| { s.to_owned() }).collect()
-  }
 
-  pub fn t2(source: Vec<Vec<&str>>) -> Vec<Vec<String>> {
+  pub fn t2(source: Vec<&[&str]>) -> Vec<Vec<String>> {
     source.into_iter().map(|a| {
-      Solution::t1(a)
+      a.into_iter().map(|&s| { s.to_owned() }).collect()
     }).collect()
   }
 
-  pub fn t1_i(source: &[i32]) -> Vec<i32> {
-    source.to_owned()
-  }
-
   pub fn t2_i(source: Vec<&[i32]>) -> Vec<Vec<i32>> {
-    source.into_iter().map(|s| { Solution::t1_i(s)}).collect()
+    source.into_iter().map(|s| { s.to_owned() }).collect()
   }
 
   pub fn binary_search<T: Ord + Eq>(nums: &Vec<T>, target: T, is_insert: bool) -> i32 {

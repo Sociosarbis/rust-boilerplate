@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 use std::collections::HashSet;
 use std::collections::HashMap;
@@ -50,30 +50,30 @@ impl Solution {
 mod tests {
   use super::*;
 
-  struct Suite<'a> {
-    orders: Vec<Vec<&'a str>>,
-    ret: Vec<Vec<&'a str>>
+  struct Suite {
+    orders: Vec<Vec<String>>,
+    ret: Vec<Vec<String>>
   }
 
   #[test]
   fn test_display_table_simple() {
     let suites = vec![
       Suite {
-        orders: vec![vec!["David","3","Ceviche"],vec!["Corina","10","Beef Burrito"],vec!["David","3","Fried Chicken"],vec!["Carla","5","Water"],vec!["Carla","5","Ceviche"],vec!["Rous","3","Ceviche"]],
-        ret: vec![vec!["Table","Beef Burrito","Ceviche","Fried Chicken","Water"],vec!["3","0","2","1","0"],vec!["5","0","1","0","1"],vec!["10","1","0","0","0"]]
+        orders: t2![["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","Fried Chicken"],["Carla","5","Water"],["Carla","5","Ceviche"],["Rous","3","Ceviche"]],
+        ret: t2![["Table","Beef Burrito","Ceviche","Fried Chicken","Water"],["3","0","2","1","0"],["5","0","1","0","1"],["10","1","0","0","0"]]
       },
       Suite {
-        orders: vec![vec!["James","12","Fried Chicken"],vec!["Ratesh","12","Fried Chicken"],vec!["Amadeus","12","Fried Chicken"],vec!["Adam","1","Canadian Waffles"],vec!["Brianna","1","Canadian Waffles"]],
-        ret: vec![vec!["Table","Canadian Waffles","Fried Chicken"],vec!["1","2","0"],vec!["12","0","3"]]
+        orders: t2![["James","12","Fried Chicken"],["Ratesh","12","Fried Chicken"],["Amadeus","12","Fried Chicken"],["Adam","1","Canadian Waffles"],["Brianna","1","Canadian Waffles"]],
+        ret: t2![["Table","Canadian Waffles","Fried Chicken"],["1","2","0"],["12","0","3"]]
       },
       Suite {
-        orders: vec![vec!["Laura","2","Bean Burrito"],vec!["Jhon","2","Beef Burrito"],vec!["Melissa","2","Soda"]],
-        ret: vec![vec!["Table","Bean Burrito","Beef Burrito","Soda"],vec!["2","1","1","1"]]
+        orders: t2![["Laura","2","Bean Burrito"],["Jhon","2","Beef Burrito"],["Melissa","2","Soda"]],
+        ret: t2![["Table","Bean Burrito","Beef Burrito","Soda"],["2","1","1","1"]]
       }
     ];
 
     for s in suites {
-      assert_eq!(Solution::t2(s.ret), Solution::display_table(Solution::t2(s.orders)));
+      assert_eq!(s.ret, Solution::display_table(s.orders));
     }
   }
 }

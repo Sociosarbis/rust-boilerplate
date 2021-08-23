@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 impl Solution {
   pub fn regions_by_slashes(grid: Vec<String>) -> i32 {
@@ -96,38 +96,38 @@ mod tests {
   fn regions_by_slashes_simple() {
     let suites = vec![
       Suite {
-        grid: Solution::t1(vec![
+        grid: t1![
           " /",
           "/ "
-        ]),
+        ],
         ret: 2
       },
       Suite {
-        grid: Solution::t1(vec![
+        grid: t1![
           " /",
           "  "
-        ]),
+        ],
         ret: 1
       },
       Suite {
-        grid: Solution::t1(vec![
+        grid: t1![
           "\\/",
           "/\\"
-        ]),
+        ],
         ret: 4
       },
       Suite {
-        grid: Solution::t1(vec![
+        grid: t1![
           "/\\",
           "\\/"
-        ]),
+        ],
         ret: 5,
       },
       Suite {
-        grid: Solution::t1(vec![
+        grid: t1![
           "//",
           "/ "
-        ]),
+        ],
         ret: 3
       }
     ];

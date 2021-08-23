@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 use std::collections::HashMap;
 
@@ -79,33 +79,33 @@ impl Solution {
 mod tests {
   use super::*;
 
-  struct Suite<'a> {
-    words: Vec<&'a str>,
+  struct Suite {
+    words: Vec<String>,
     k: i32,
-    ret: Vec<&'a str>
+    ret: Vec<String>
   }
 
   #[test]
   fn test_top_k_frequent_simple() {
     let suites = vec![
       Suite {
-        words: vec!["i", "love", "leetcode", "i", "love", "coding"],
+        words: t1!["i", "love", "leetcode", "i", "love", "coding"],
         k: 2,
-        ret: vec!["i", "love"]
+        ret: t1!["i", "love"]
       },
       Suite {
-        words: vec!["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"],
+        words: t1!["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"],
         k: 4,
-        ret: vec!["the", "is", "sunny", "day"]
+        ret: t1!["the", "is", "sunny", "day"]
       },
       Suite {
-        words: vec!["plpaboutit","jnoqzdute","sfvkdqf","mjc","nkpllqzjzp","foqqenbey","ssnanizsav","nkpllqzjzp","sfvkdqf","isnjmy","pnqsz","hhqpvvt","fvvdtpnzx","jkqonvenhx","cyxwlef","hhqpvvt","fvvdtpnzx","plpaboutit","sfvkdqf","mjc","fvvdtpnzx","bwumsj","foqqenbey","isnjmy","nkpllqzjzp","hhqpvvt","foqqenbey","fvvdtpnzx","bwumsj","hhqpvvt","fvvdtpnzx","jkqonvenhx","jnoqzdute","foqqenbey","jnoqzdute","foqqenbey","hhqpvvt","ssnanizsav","mjc","foqqenbey","bwumsj","ssnanizsav","fvvdtpnzx","nkpllqzjzp","jkqonvenhx","hhqpvvt","mjc","isnjmy","bwumsj","pnqsz","hhqpvvt","nkpllqzjzp","jnoqzdute","pnqsz","nkpllqzjzp","jnoqzdute","foqqenbey","nkpllqzjzp","hhqpvvt","fvvdtpnzx","plpaboutit","jnoqzdute","sfvkdqf","fvvdtpnzx","jkqonvenhx","jnoqzdute","nkpllqzjzp","jnoqzdute","fvvdtpnzx","jkqonvenhx","hhqpvvt","isnjmy","jkqonvenhx","ssnanizsav","jnoqzdute","jkqonvenhx","fvvdtpnzx","hhqpvvt","bwumsj","nkpllqzjzp","bwumsj","jkqonvenhx","jnoqzdute","pnqsz","foqqenbey","sfvkdqf","sfvkdqf"],
+        words: t1!["plpaboutit","jnoqzdute","sfvkdqf","mjc","nkpllqzjzp","foqqenbey","ssnanizsav","nkpllqzjzp","sfvkdqf","isnjmy","pnqsz","hhqpvvt","fvvdtpnzx","jkqonvenhx","cyxwlef","hhqpvvt","fvvdtpnzx","plpaboutit","sfvkdqf","mjc","fvvdtpnzx","bwumsj","foqqenbey","isnjmy","nkpllqzjzp","hhqpvvt","foqqenbey","fvvdtpnzx","bwumsj","hhqpvvt","fvvdtpnzx","jkqonvenhx","jnoqzdute","foqqenbey","jnoqzdute","foqqenbey","hhqpvvt","ssnanizsav","mjc","foqqenbey","bwumsj","ssnanizsav","fvvdtpnzx","nkpllqzjzp","jkqonvenhx","hhqpvvt","mjc","isnjmy","bwumsj","pnqsz","hhqpvvt","nkpllqzjzp","jnoqzdute","pnqsz","nkpllqzjzp","jnoqzdute","foqqenbey","nkpllqzjzp","hhqpvvt","fvvdtpnzx","plpaboutit","jnoqzdute","sfvkdqf","fvvdtpnzx","jkqonvenhx","jnoqzdute","nkpllqzjzp","jnoqzdute","fvvdtpnzx","jkqonvenhx","hhqpvvt","isnjmy","jkqonvenhx","ssnanizsav","jnoqzdute","jkqonvenhx","fvvdtpnzx","hhqpvvt","bwumsj","nkpllqzjzp","bwumsj","jkqonvenhx","jnoqzdute","pnqsz","foqqenbey","sfvkdqf","sfvkdqf"],
         k: 1,
-        ret: vec!["fvvdtpnzx"]
+        ret: t1!["fvvdtpnzx"]
       }
     ];
     for s in suites {
-      assert_eq!(Solution::top_k_frequent(Solution::t1(s.words), s.k), Solution::t1(s.ret));
+      assert_eq!(Solution::top_k_frequent(s.words, s.k), s.ret);
     }
   }
 }
