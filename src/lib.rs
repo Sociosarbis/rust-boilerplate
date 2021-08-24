@@ -141,6 +141,7 @@ mod check_record;
 mod reverse_vowels;
 mod reverse_str;
 mod get_maximum_generated;
+mod find_cheapest_price;
 
 #[macro_export]
 macro_rules! t2_i {
