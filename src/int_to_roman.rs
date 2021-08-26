@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 impl Solution {
   pub fn int_to_roman(mut num: i32) -> String {

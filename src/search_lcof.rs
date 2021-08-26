@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 impl Solution {
   pub fn search_lcof(nums: Vec<i32>, target: i32) -> i32 {

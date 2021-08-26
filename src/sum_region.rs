@@ -49,7 +49,7 @@ impl NumMatrix {
 #[cfg(test)]
 mod tests {
   use super::*;
-  use crate::Solution;
+  use crate::*;
 
   struct Suite {
     matrix: Vec<Vec<i32>>,

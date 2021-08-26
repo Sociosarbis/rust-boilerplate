@@ -44,7 +44,7 @@ impl NumArray {
 #[cfg(test)]
 mod tests {
   use super::*;
-  use crate::Solution;
+  use crate::*;
 
   struct Suite {
     nums: Vec<i32>,

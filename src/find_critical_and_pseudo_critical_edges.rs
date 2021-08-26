@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 impl Solution {
   /** 先获取最小生成树的cost，然后根据定义判断各条边是否符合要求 */

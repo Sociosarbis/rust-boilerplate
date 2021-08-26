@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 impl Solution {
   pub fn flip_and_invert_image(mut a: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

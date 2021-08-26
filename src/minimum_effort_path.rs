@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 use std::cmp::max;
 
 impl Solution {

@@ -1,4 +1,4 @@
-use super::Solution;
+use super::*;
 
 impl Solution {
   pub fn max_envelopes(mut envelopes: Vec<Vec<i32>>) -> i32 {
