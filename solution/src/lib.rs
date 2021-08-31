@@ -1,14 +1,14 @@
 #[macro_export]
 macro_rules! t2_i {
   ($($l:expr),*) => {
-    Utility::t2_i(vec![$(&$l),*])
+    Solution::t2_i(vec![$(&$l),*])
   };
 }
 
 #[macro_export]
 macro_rules! t2 {
   ($($l:expr),*) => {
-    Utility::t2(vec![$(&$l),*])
+    Solution::t2(vec![$(&$l),*])
   };
 }
 
