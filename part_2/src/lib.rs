@@ -7,6 +7,7 @@ mod corp_flight_bookings;
 mod compare_version;
 mod get_kth_from_end;
 mod smallest_k;
+mod search;
 
 pub struct Solution {}
 
