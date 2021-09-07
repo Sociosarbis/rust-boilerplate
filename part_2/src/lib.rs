@@ -8,6 +8,7 @@ mod compare_version;
 mod get_kth_from_end;
 mod smallest_k;
 mod search;
+mod balanced_string_split;
 
 pub struct Solution {}
 
