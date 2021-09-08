@@ -9,6 +9,7 @@ mod get_kth_from_end;
 mod smallest_k;
 mod search;
 mod balanced_string_split;
+mod find_maximized_capital;
 
 pub struct Solution {}
 
