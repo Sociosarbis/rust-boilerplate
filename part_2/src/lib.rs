@@ -10,6 +10,7 @@ mod smallest_k;
 mod search;
 mod balanced_string_split;
 mod find_maximized_capital;
+mod full_justify;
 
 pub struct Solution {}
 
