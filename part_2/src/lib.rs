@@ -12,6 +12,7 @@ mod balanced_string_split;
 mod find_maximized_capital;
 mod full_justify;
 mod chalk_replacer;
+mod number_of_boomerangs;
 
 pub struct Solution {}
 
