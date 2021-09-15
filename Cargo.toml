@@ -8,5 +8,6 @@ edition = "2018"
 
 [dependencies]
 solution = { path = "./solution" }
+part_2 = { path = "./part_2" }
 macros = { path = "./macros" }
 utils = { path = "./utils" }

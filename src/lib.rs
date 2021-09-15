@@ -1,5 +1,7 @@
 pub use solution::*;
 
+pub use part_2::*;
+
 mod monotone_increasing_digits;
 mod unique_paths;
 mod word_pattern;
