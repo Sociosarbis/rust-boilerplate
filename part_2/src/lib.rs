@@ -14,6 +14,7 @@ mod full_justify;
 mod chalk_replacer;
 mod number_of_boomerangs;
 mod find_peak_element;
+mod find_words;
 
 pub struct Solution {}
 

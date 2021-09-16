@@ -19,6 +19,13 @@ macro_rules! t1 {
   };
 }
 
+#[macro_export]
+macro_rules! t2_c {
+  ($($l:expr), *) => {
+    Solution::t2_c(vec![$(&$l),*])
+  }
+}
+
 
 pub trait Utility {
 
@@ -30,6 +37,10 @@ pub trait Utility {
 
   fn t2_i(source: Vec<&[i32]>) -> Vec<Vec<i32>> {
     source.into_iter().map(|s| { s.to_owned() }).collect()
+  }
+
+  fn t2_c(source: Vec<&[&str]>) -> Vec<Vec<char>> {
+    source.into_iter().map(|a| { a.into_iter().map(|&s| { s.chars().next().unwrap() }).collect() }).collect()
   }
 
   fn binary_search<T: Ord + Eq>(nums: &Vec<T>, target: T, is_insert: bool) -> i32 {
