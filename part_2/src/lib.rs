@@ -16,6 +16,7 @@ mod number_of_boomerangs;
 mod find_peak_element;
 mod find_words;
 mod is_valid_sudoku;
+mod split_list_to_parts;
 
 pub struct Solution {}
 
