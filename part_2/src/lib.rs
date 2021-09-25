@@ -18,6 +18,7 @@ mod find_words;
 mod is_valid_sudoku;
 mod split_list_to_parts;
 mod is_power_of_three;
+mod min_distance;
 
 pub struct Solution {}
 
