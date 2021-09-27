@@ -17,87 +17,84 @@ impl Solution {
     for i in 1..chars.len() {
       let index = i & 1;
       let prev_index = 1 - index;
-      let num = if chars[i] == '*' { 0 } else { chars[i] as usize - 48 };
-      let prev_num = if chars[i - 1] == '*' { 0 } else { chars[i - 1] as usize - 48 };
-      if chars[i] == '*' {
-        if chars[i - 1] == '*' {
-          for i in 1..10 {
-            dp[index][1][i] = dp[prev_index][0][1];
-          }
-          for i in 1..7 {
-            dp[index][1][i] += dp[prev_index][0][2];
-          }
-        } else {
-          if chars[i - 1] == '1' {
-            for i in 1..10 {
-              dp[index][1][i] = dp[prev_index][0][1];
+      let c = chars[i];
+      let prev_c = chars[i - 1];
+      let num = if c == '*' { 10 } else { c as usize - 48 };
+      let prev_num = if prev_c == '*' { 10 } else { prev_c as usize - 48 };
+      match c {
+        '*' => {
+          match prev_c {
+            '*' => {
+              for i in 1..10 {
+                dp[index][1][i] = dp[prev_index][0][1];
+              }
+              for i in 1..7 {
+                dp[index][1][i] += dp[prev_index][0][2];
+              }
             }
-          } else if chars[i - 1] == '2' {
-            for i in 1..7 {
-              dp[index][1][i] = dp[prev_index][0][2];
+            '1' => {
+              for i in 1..10 {
+                dp[index][1][i] = dp[prev_index][0][1];
+              }
             }
-          } else {
-            for i in 1..10 {
-              dp[index][1][i] = 0;
+            '2' => {
+              for i in 1..7 {
+                dp[index][1][i] = dp[prev_index][0][2];
+              }
+              for i in 7..10 {
+                dp[index][1][i] = 0;
+              }
+            }
+            _ => {
+              for i in 1..10 {
+                dp[index][1][i] = 0;
+              }
             }
           }
         }
-      } else {
-        dp[index][1][num] = {
-          if chars[i - 1] == '*' {
-            dp[prev_index][0][1] + dp[prev_index][0][2] * if num > 6 { 0 } else { 1 }
-          } else if chars[i - 1] == '1' {
-              dp[prev_index][0][1]
-            } else if chars[i - 1] == '2' {
-              dp[prev_index][0][2] * if num > 6 { 0 } else { 1 }
-            } else {
-              0
-            }
-        } % 1000000007;
+        _ => {
+          dp[index][1][num] = (match prev_c {
+            '*' | '1' => { dp[prev_index][0][1] }
+            _ => { 0 }
+          } + match prev_c {
+            '*' | '2' => { dp[prev_index][0][2] * if num > 6 { 0 } else { 1 } }
+            _ => { 0 }
+          }) % 1000000007;
+        }
       }
 
-      if chars[i] == '*' {
-        for j in 1..10 {
-          dp[index][0][j] = if chars[i - 1] != '*' {
+      match c {
+        '*' => {
+          for j in 1..10 {
+            dp[index][0][j] = if prev_c != '*' {
+              dp[prev_index][0][prev_num] + dp[prev_index][1][prev_num]
+            } else {
+              (1..10).fold(0, |acc, k| acc + dp[prev_index][0][k] + dp[prev_index][1][k])
+            } % 1000000007;
+          }
+        }
+        '0' => { dp[index][0][0] = 0; }
+        _ => {
+          dp[index][0][num] = if prev_c != '*' {
             dp[prev_index][0][prev_num] + dp[prev_index][1][prev_num]
           } else {
-            let mut temp = 0;
-            for k in 1..10 {
-              temp += dp[prev_index][0][k] + dp[prev_index][1][k];
-            }
-            temp
+            (1..10).fold(0, |acc, j| acc + dp[prev_index][0][j] + dp[prev_index][1][j])
           } % 1000000007;
         }
-      } else if chars[i] == '0' {
-        dp[index][0][0] = 0;
-      } else {
-        dp[index][0][num] = if chars[i - 1] != '*' {
-          dp[prev_index][0][prev_num] + dp[prev_index][1][prev_num]
-        } else {
-          let mut temp = 0;
-          for j in 1..10 {
-            temp += dp[prev_index][0][j] + dp[prev_index][1][j];
-          }
-          temp
-        } % 1000000007;
       }
     }
     let last_char = *chars.last().unwrap();
     let last_index = (chars.len() - 1) & 1;
-    let mut ret = 0;
-    if last_char == '*' {
-      for i in 0..2 {
-       for j in 1..10 {
-         ret = (ret + dp[last_index][i][j]) % 1000000007
-       }
-      }
+    (if last_char == '*' {
+      (0..2).fold(0, |acc1, i| 
+        (acc1 + (1..10).fold(0, |acc2, j| 
+          (acc2 + dp[last_index][i][j]) % 1000000007
+        )) % 1000000007
+      )
     } else {
       let last_num = last_char as usize - 48;
-      for i in 0..2 {
-        ret = (ret + dp[last_index][i][last_num]) % 1000000007
-      }
-    }
-    ret as i32
+      (0..2).fold(0, |acc, i| (acc + dp[last_index][i][last_num]) % 1000000007)
+    }) as i32
   }
 }
 
