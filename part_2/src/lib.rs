@@ -20,6 +20,7 @@ mod split_list_to_parts;
 mod is_power_of_three;
 mod min_distance;
 mod get_sum;
+mod num_decodings;
 
 pub struct Solution {}
 
