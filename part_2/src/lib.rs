@@ -23,6 +23,7 @@ mod get_sum;
 mod num_decodings;
 mod path_sum;
 mod find_min_moves;
+mod compute_area;
 
 pub struct Solution {}
 
