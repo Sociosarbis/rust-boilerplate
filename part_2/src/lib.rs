@@ -25,6 +25,7 @@ mod path_sum;
 mod find_min_moves;
 mod compute_area;
 mod find_repeated_dna_sequences;
+mod summary_ranges;
 
 pub struct Solution {}
 
