@@ -26,6 +26,7 @@ mod find_min_moves;
 mod compute_area;
 mod find_repeated_dna_sequences;
 mod summary_ranges;
+mod number_to_words;
 
 pub struct Solution {}
 
