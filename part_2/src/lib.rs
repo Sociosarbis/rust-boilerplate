@@ -28,6 +28,7 @@ mod find_repeated_dna_sequences;
 mod summary_ranges;
 mod number_to_words;
 mod divide;
+mod fizz_buzz;
 
 pub struct Solution {}
 
