@@ -29,6 +29,7 @@ mod summary_ranges;
 mod number_to_words;
 mod divide;
 mod fizz_buzz;
+mod peak_index_in_mountain_array;
 
 pub struct Solution {}
 
