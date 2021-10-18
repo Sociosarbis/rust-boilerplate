@@ -31,6 +31,7 @@ mod divide;
 mod fizz_buzz;
 mod peak_index_in_mountain_array;
 mod count_and_say;
+mod find_complement;
 
 pub struct Solution {}
 
