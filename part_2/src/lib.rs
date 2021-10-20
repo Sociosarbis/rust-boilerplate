@@ -33,6 +33,7 @@ mod peak_index_in_mountain_array;
 mod count_and_say;
 mod find_complement;
 mod word_dictionary;
+mod min_moves;
 
 pub struct Solution {}
 
