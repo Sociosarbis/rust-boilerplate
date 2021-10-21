@@ -34,6 +34,7 @@ mod count_and_say;
 mod find_complement;
 mod word_dictionary;
 mod min_moves;
+mod plus_one;
 
 pub struct Solution {}
 
