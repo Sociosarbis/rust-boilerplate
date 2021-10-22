@@ -35,6 +35,7 @@ mod find_complement;
 mod word_dictionary;
 mod min_moves;
 mod plus_one;
+mod majority_element;
 
 pub struct Solution {}
 
