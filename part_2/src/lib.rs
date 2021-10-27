@@ -38,6 +38,7 @@ mod plus_one;
 mod majority_element;
 mod search_matrix;
 mod next_greater_element;
+mod remove_invalid_parentheses;
 
 pub struct Solution {}
 
