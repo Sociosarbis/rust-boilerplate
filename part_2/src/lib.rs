@@ -39,6 +39,7 @@ mod majority_element;
 mod search_matrix;
 mod next_greater_element;
 mod remove_invalid_parentheses;
+mod is_self_crossing;
 
 pub struct Solution {}
 
