@@ -40,6 +40,7 @@ mod search_matrix;
 mod next_greater_element;
 mod remove_invalid_parentheses;
 mod is_self_crossing;
+mod distribute_candies;
 
 pub struct Solution {}
 
