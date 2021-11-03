@@ -41,6 +41,7 @@ mod next_greater_element;
 mod remove_invalid_parentheses;
 mod is_self_crossing;
 mod distribute_candies;
+mod trap_rain_water;
 
 pub struct Solution {}
 
