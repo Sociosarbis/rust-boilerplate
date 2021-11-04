@@ -42,6 +42,7 @@ mod remove_invalid_parentheses;
 mod is_self_crossing;
 mod distribute_candies;
 mod trap_rain_water;
+mod is_perfect_square;
 
 pub struct Solution {}
 
