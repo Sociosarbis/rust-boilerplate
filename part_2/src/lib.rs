@@ -45,6 +45,7 @@ mod trap_rain_water;
 mod is_perfect_square;
 mod longest_subsequence;
 mod find_min_steps;
+mod find_poisoned_duration;
 
 pub struct Solution {}
 
