@@ -46,6 +46,7 @@ mod is_perfect_square;
 mod longest_subsequence;
 mod find_min_steps;
 mod find_poisoned_duration;
+mod k_inverse_pairs;
 
 pub struct Solution {}
 
