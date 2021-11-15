@@ -48,6 +48,7 @@ mod find_min_steps;
 mod find_poisoned_duration;
 mod k_inverse_pairs;
 mod get_money_amount;
+mod bulb_switch;
 
 pub struct Solution {}
 
