@@ -1,7 +1,5 @@
 use super::*;
 
-use std::cmp::Ordering;
-
 impl Solution {
   pub fn is_rectangle_cover(mut rectangles: Vec<Vec<i32>>) -> bool {
     let mut x_min = rectangles[0][0];
@@ -23,10 +21,7 @@ impl Solution {
         y_max = rectangles[i][3];
       }
     }
-    rectangles.sort_by(|a, b| match a[1].cmp(&b[1]) {
-      Ordering::Equal => a[0].cmp(&b[0]),
-      v => v
-    });
+    rectangles.sort_by(|a, b| a[1].cmp(&b[1]));
     let mut x_queue: Vec<usize> = vec![];
     let mut y_queue: Vec<usize> = vec![];
     let mut y = y_min;
@@ -34,7 +29,6 @@ impl Solution {
     let mut i = 0;
     while i < rectangles.len() || !x_queue.is_empty() {
       while i < rectangles.len() && rectangles[i][1] <= y {
-        println!("{:?}", i);
         if Solution::insert_x_queue(&mut x_queue, &rectangles, i) {
           Solution::insert_y_queue(&mut y_queue, &rectangles, i);
           width += rectangles[i][2] as i64 - rectangles[i][0] as i64;
@@ -46,7 +40,6 @@ impl Solution {
       if width != x_max as i64 - x_min as i64 {
         return false;
       }
-      println!("{:?}", x_queue);
       y = rectangles[*y_queue.last().unwrap()][3];
       while !y_queue.is_empty() {
         let j = y_queue[y_queue.len() - 1];
@@ -54,6 +47,8 @@ impl Solution {
           y_queue.pop();
           Solution::remove_x_queue(&mut x_queue, &rectangles, j);
           width -= rectangles[j][2] as i64 - rectangles[j][0] as i64;
+        } else {
+          break;
         }
       }
     }
@@ -64,13 +59,13 @@ impl Solution {
     if !x_queue.is_empty() {
       let mut l = 0;
       let mut r = x_queue.len() - 1;
+      let rect = &rectangles[i];
       while l <= r {
-        let rect = &rectangles[i];
         let mid = (l + r) >> 1;
         let mid_rect = &rectangles[x_queue[mid]];
-        if mid_rect[2] < rect[0] {
+        if mid_rect[2] <= rect[0] {
           l = mid + 1;
-        } else if mid_rect[0] > rect[2] {
+        } else if mid_rect[0] >= rect[2] {
           if mid > 0 {
             r = mid - 1;
           } else {
@@ -95,7 +90,6 @@ impl Solution {
       let mut l = 0;
       let mut r = x_queue.len() - 1;
       while l <= r {
-        println!("{:?}", l);
         let mid = (l + r) >> 1;
         let mid_rect = &rectangles[x_queue[mid]];
         if mid_rect[2] < rect[0] {
@@ -128,7 +122,7 @@ impl Solution {
             return false
           }
         }
-        x_queue.push(i);
+        x_queue.insert(l, i);
       }
     }
     true
