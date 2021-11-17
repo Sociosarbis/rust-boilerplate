@@ -50,6 +50,7 @@ mod k_inverse_pairs;
 mod get_money_amount;
 mod bulb_switch;
 mod is_rectangle_cover;
+mod max_product;
 
 pub struct Solution {}
 
