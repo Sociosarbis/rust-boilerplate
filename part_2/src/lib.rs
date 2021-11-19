@@ -52,6 +52,7 @@ mod bulb_switch;
 mod is_rectangle_cover;
 mod max_product;
 mod find_tilt;
+mod integer_replacement;
 
 pub struct Solution {}
 
