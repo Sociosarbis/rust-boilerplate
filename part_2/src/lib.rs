@@ -53,6 +53,7 @@ mod is_rectangle_cover;
 mod max_product;
 mod find_tilt;
 mod integer_replacement;
+mod shuffle;
 
 pub struct Solution {}
 
