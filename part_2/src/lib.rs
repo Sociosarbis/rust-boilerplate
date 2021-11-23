@@ -54,6 +54,7 @@ mod max_product;
 mod find_tilt;
 mod integer_replacement;
 mod shuffle;
+mod buddy_strings;
 
 pub struct Solution {}
 
