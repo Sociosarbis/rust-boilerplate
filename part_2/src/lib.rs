@@ -55,6 +55,7 @@ mod find_tilt;
 mod integer_replacement;
 mod shuffle;
 mod buddy_strings;
+mod original_digits;
 
 pub struct Solution {}
 
