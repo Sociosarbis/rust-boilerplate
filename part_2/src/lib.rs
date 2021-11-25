@@ -56,6 +56,7 @@ mod integer_replacement;
 mod shuffle;
 mod buddy_strings;
 mod original_digits;
+mod poor_pigs;
 
 pub struct Solution {}
 
