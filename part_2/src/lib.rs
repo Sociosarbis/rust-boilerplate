@@ -57,6 +57,7 @@ mod shuffle;
 mod buddy_strings;
 mod original_digits;
 mod poor_pigs;
+mod kth_smallest_prime_fraction;
 
 pub struct Solution {}
 
