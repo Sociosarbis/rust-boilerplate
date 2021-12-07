@@ -60,6 +60,7 @@ mod poor_pigs;
 mod kth_smallest_prime_fraction;
 mod find_nth_digit;
 mod find_relative_ranks;
+mod color_border;
 
 pub struct Solution {}
 
