@@ -61,6 +61,7 @@ mod kth_smallest_prime_fraction;
 mod find_nth_digit;
 mod find_relative_ranks;
 mod color_border;
+mod max_sum_of_three_subarrays;
 
 pub struct Solution {}
 
