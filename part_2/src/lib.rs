@@ -62,6 +62,7 @@ mod find_nth_digit;
 mod find_relative_ranks;
 mod color_border;
 mod max_sum_of_three_subarrays;
+mod valid_tic_tac_toe;
 
 pub struct Solution {}
 
