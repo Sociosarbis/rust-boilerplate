@@ -63,6 +63,7 @@ mod find_relative_ranks;
 mod color_border;
 mod max_sum_of_three_subarrays;
 mod valid_tic_tac_toe;
+mod shortest_completing_word;
 
 pub struct Solution {}
 
