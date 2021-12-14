@@ -1,8 +1,20 @@
 use super::*;
 
-impl Solution {
-  pub fn schedule_course(courses: Vec<Vec<i32>>) -> i32 {
+use std::collections::BinaryHeap;
 
+impl Solution {
+  pub fn schedule_course(mut courses: Vec<Vec<i32>>) -> i32 {
+    let mut t = 0;
+    let mut q: BinaryHeap<i32> = BinaryHeap::new();
+    courses.sort_unstable_by(|a, b| a[1].cmp(&b[1]));
+    for c in courses {
+      t += c[0];
+      q.push(c[0]);
+      if t > c[1] {
+        t -= q.pop().unwrap();
+      }
+    }
+    q.len() as i32
   }
 }
 
