@@ -65,6 +65,7 @@ mod max_sum_of_three_subarrays;
 mod valid_tic_tac_toe;
 mod shortest_completing_word;
 mod schedule_course;
+mod loud_and_rich;
 
 pub struct Solution {}
 
