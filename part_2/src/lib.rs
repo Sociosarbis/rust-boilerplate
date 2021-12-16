@@ -66,6 +66,7 @@ mod valid_tic_tac_toe;
 mod shortest_completing_word;
 mod schedule_course;
 mod loud_and_rich;
+mod visible_points;
 
 pub struct Solution {}
 
