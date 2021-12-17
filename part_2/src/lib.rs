@@ -67,6 +67,7 @@ mod shortest_completing_word;
 mod schedule_course;
 mod loud_and_rich;
 mod visible_points;
+mod num_water_bottles;
 
 pub struct Solution {}
 
