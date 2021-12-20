@@ -68,6 +68,7 @@ mod schedule_course;
 mod loud_and_rich;
 mod visible_points;
 mod num_water_bottles;
+mod find_radius;
 
 pub struct Solution {}
 
