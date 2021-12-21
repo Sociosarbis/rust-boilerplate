@@ -69,6 +69,7 @@ mod loud_and_rich;
 mod visible_points;
 mod num_water_bottles;
 mod find_radius;
+mod day_of_year;
 
 pub struct Solution {}
 
