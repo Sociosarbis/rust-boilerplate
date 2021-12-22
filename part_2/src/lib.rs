@@ -70,6 +70,7 @@ mod visible_points;
 mod num_water_bottles;
 mod find_radius;
 mod day_of_year;
+mod repeated_string_match;
 
 pub struct Solution {}
 
