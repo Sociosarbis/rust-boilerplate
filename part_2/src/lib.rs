@@ -71,6 +71,7 @@ mod num_water_bottles;
 mod find_radius;
 mod day_of_year;
 mod repeated_string_match;
+mod longest_dup_substring;
 
 pub struct Solution {}
 
