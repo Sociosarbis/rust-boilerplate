@@ -73,6 +73,7 @@ mod day_of_year;
 mod repeated_string_match;
 mod longest_dup_substring;
 mod eaten_apples;
+mod num_friend_requests;
 
 pub struct Solution {}
 
