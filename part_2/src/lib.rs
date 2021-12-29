@@ -74,6 +74,7 @@ mod repeated_string_match;
 mod longest_dup_substring;
 mod eaten_apples;
 mod num_friend_requests;
+mod count_quadruplets;
 
 pub struct Solution {}
 
