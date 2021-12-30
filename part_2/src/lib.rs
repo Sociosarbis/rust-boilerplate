@@ -75,6 +75,7 @@ mod longest_dup_substring;
 mod eaten_apples;
 mod num_friend_requests;
 mod count_quadruplets;
+mod is_n_straight_hand;
 
 pub struct Solution {}
 
