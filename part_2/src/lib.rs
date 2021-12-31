@@ -76,6 +76,7 @@ mod eaten_apples;
 mod num_friend_requests;
 mod count_quadruplets;
 mod is_n_straight_hand;
+mod check_perfect_number;
 
 pub struct Solution {}
 
