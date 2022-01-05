@@ -78,6 +78,7 @@ mod count_quadruplets;
 mod is_n_straight_hand;
 mod check_perfect_number;
 mod cat_mouse_game;
+mod modify_string;
 
 pub struct Solution {}
 
