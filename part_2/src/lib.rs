@@ -80,6 +80,7 @@ mod check_perfect_number;
 mod cat_mouse_game;
 mod modify_string;
 mod simplify_path;
+mod max_depth;
 
 pub struct Solution {}
 
