@@ -81,6 +81,7 @@ mod cat_mouse_game;
 mod modify_string;
 mod simplify_path;
 mod max_depth;
+mod is_additive_number;
 
 pub struct Solution {}
 
