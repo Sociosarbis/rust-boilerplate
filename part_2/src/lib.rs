@@ -82,6 +82,7 @@ mod modify_string;
 mod simplify_path;
 mod max_depth;
 mod is_additive_number;
+mod dominant_index;
 
 pub struct Solution {}
 
