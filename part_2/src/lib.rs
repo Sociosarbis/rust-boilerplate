@@ -83,6 +83,7 @@ mod simplify_path;
 mod max_depth;
 mod is_additive_number;
 mod dominant_index;
+mod k_smallest_pairs;
 
 pub struct Solution {}
 
