@@ -84,6 +84,7 @@ mod max_depth;
 mod is_additive_number;
 mod dominant_index;
 mod k_smallest_pairs;
+mod count_vowel_permutation;
 
 pub struct Solution {}
 
