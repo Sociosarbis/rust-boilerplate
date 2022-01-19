@@ -86,6 +86,8 @@ mod dominant_index;
 mod k_smallest_pairs;
 mod count_vowel_permutation;
 mod find_min_difference;
+mod contains_nearby_duplicate;
+
 
 pub struct Solution {}
 
