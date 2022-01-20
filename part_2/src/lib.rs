@@ -87,6 +87,7 @@ mod k_smallest_pairs;
 mod count_vowel_permutation;
 mod find_min_difference;
 mod contains_nearby_duplicate;
+mod stone_game_ix;
 
 
 pub struct Solution {}
