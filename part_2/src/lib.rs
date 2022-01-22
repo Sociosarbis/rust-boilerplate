@@ -89,7 +89,7 @@ mod find_min_difference;
 mod contains_nearby_duplicate;
 mod stone_game_ix;
 mod min_jumps;
-
+mod remove_palindrome_sub;
 
 pub struct Solution {}
 
