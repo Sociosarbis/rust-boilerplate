@@ -90,6 +90,7 @@ mod contains_nearby_duplicate;
 mod stone_game_ix;
 mod min_jumps;
 mod remove_palindrome_sub;
+mod stock_price;
 
 pub struct Solution {}
 
