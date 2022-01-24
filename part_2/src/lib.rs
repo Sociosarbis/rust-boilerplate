@@ -91,6 +91,7 @@ mod stone_game_ix;
 mod min_jumps;
 mod remove_palindrome_sub;
 mod stock_price;
+mod second_minimum;
 
 pub struct Solution {}
 
