@@ -92,6 +92,7 @@ mod min_jumps;
 mod remove_palindrome_sub;
 mod stock_price;
 mod second_minimum;
+mod number_of_matches;
 
 pub struct Solution {}
 
