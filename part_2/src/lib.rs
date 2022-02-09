@@ -94,6 +94,7 @@ mod stock_price;
 mod second_minimum;
 mod number_of_matches;
 mod grid_illumination;
+mod count_k_difference;
 
 pub struct Solution {}
 
