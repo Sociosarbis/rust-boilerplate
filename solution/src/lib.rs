@@ -1,3 +1,6 @@
+use std::ops::{ Rem, Div };
+use std::fmt::{Display, Debug};
+
 #[macro_export]
 macro_rules! t2_i {
   ($($l:expr),*) => {
@@ -70,6 +73,20 @@ pub trait Utility {
       }
     }
     0
+  }
+
+  fn get_greatest_common_divisor<T: Ord + Eq + Div<Output = T> + Rem<Output = T> + Into<i32> + Copy + Display + Debug>(mut a: T, mut b: T) -> T {
+    loop {
+      if a > b {
+        std::mem::swap(&mut a, &mut b);
+      }
+      let next_b = b % a;
+      if next_b.into() == 0 {
+        break;
+      }
+      b = next_b;
+    }
+    a
   }
 
 }
