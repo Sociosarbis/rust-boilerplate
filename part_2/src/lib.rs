@@ -97,6 +97,7 @@ mod grid_illumination;
 mod count_k_difference;
 mod simplified_fractions;
 mod minimum_difference;
+mod single_non_duplicate;
 
 pub struct Solution {}
 
