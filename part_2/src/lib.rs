@@ -98,6 +98,7 @@ mod count_k_difference;
 mod simplified_fractions;
 mod minimum_difference;
 mod single_non_duplicate;
+mod lucky_numbers;
 
 pub struct Solution {}
 
