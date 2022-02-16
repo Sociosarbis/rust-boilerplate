@@ -99,6 +99,7 @@ mod simplified_fractions;
 mod minimum_difference;
 mod single_non_duplicate;
 mod lucky_numbers;
+mod check_ways;
 
 pub struct Solution {}
 
