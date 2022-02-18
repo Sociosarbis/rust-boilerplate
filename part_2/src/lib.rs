@@ -101,6 +101,7 @@ mod single_non_duplicate;
 mod lucky_numbers;
 mod check_ways;
 mod knight_probability;
+mod find_center;
 
 pub struct Solution {}
 
