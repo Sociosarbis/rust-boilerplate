@@ -102,6 +102,7 @@ mod lucky_numbers;
 mod check_ways;
 mod knight_probability;
 mod find_center;
+mod push_dominoes;
 
 pub struct Solution {}
 
