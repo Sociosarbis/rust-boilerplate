@@ -103,6 +103,7 @@ mod check_ways;
 mod knight_probability;
 mod find_center;
 mod push_dominoes;
+mod number_of_good_subsets;
 
 pub struct Solution {}
 
