@@ -105,6 +105,7 @@ mod find_center;
 mod push_dominoes;
 mod number_of_good_subsets;
 mod reverse_only_letters;
+mod find_ball;
 
 pub struct Solution {}
 
