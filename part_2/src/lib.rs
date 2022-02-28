@@ -107,6 +107,7 @@ mod number_of_good_subsets;
 mod reverse_only_letters;
 mod find_ball;
 mod complex_number_multiply;
+mod maximum_requests;
 
 pub struct Solution {}
 
