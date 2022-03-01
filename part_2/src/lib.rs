@@ -108,6 +108,7 @@ mod reverse_only_letters;
 mod find_ball;
 mod complex_number_multiply;
 mod maximum_requests;
+mod convert;
 
 pub struct Solution {}
 
