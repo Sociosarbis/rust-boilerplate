@@ -109,6 +109,7 @@ mod find_ball;
 mod complex_number_multiply;
 mod maximum_requests;
 mod convert;
+mod nearest_palindromic;
 
 pub struct Solution {}
 
