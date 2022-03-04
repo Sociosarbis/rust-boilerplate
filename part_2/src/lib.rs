@@ -111,6 +111,7 @@ mod maximum_requests;
 mod convert;
 mod nearest_palindromic;
 mod add_digits;
+mod sub_array_ranges;
 
 pub struct Solution {}
 
