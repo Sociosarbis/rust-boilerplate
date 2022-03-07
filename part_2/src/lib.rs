@@ -112,6 +112,7 @@ mod convert;
 mod nearest_palindromic;
 mod add_digits;
 mod sub_array_ranges;
+mod convert_to_base7;
 
 pub struct Solution {}
 
