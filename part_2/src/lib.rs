@@ -113,6 +113,7 @@ mod nearest_palindromic;
 mod add_digits;
 mod sub_array_ranges;
 mod convert_to_base7;
+mod plates_between_candles;
 
 pub struct Solution {}
 
