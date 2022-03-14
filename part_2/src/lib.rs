@@ -115,6 +115,7 @@ mod sub_array_ranges;
 mod convert_to_base7;
 mod plates_between_candles;
 mod count_highest_score_nodes;
+mod find_restaurant;
 
 pub struct Solution {}
 
