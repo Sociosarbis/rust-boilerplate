@@ -117,6 +117,7 @@ mod plates_between_candles;
 mod count_highest_score_nodes;
 mod find_restaurant;
 mod count_max_or_subsets;
+mod all_one;
 
 pub struct Solution {}
 
