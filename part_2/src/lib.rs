@@ -118,6 +118,7 @@ mod count_highest_score_nodes;
 mod find_restaurant;
 mod count_max_or_subsets;
 mod all_one;
+mod longest_word;
 
 pub struct Solution {}
 
