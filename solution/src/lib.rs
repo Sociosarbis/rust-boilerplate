@@ -3,8 +3,8 @@ use std::fmt::{Display, Debug};
 
 #[macro_export]
 macro_rules! t2_i {
-  ($($l:expr),*) => {
-    Solution::t2_i(vec![$(&$l),*])
+  ($([$($l:expr),*]),*) => {
+    vec![$(vec![$($l),*]),*]
   };
 }
 
@@ -36,10 +36,6 @@ pub trait Utility {
     source.into_iter().map(|a| {
       a.into_iter().map(|&s| { s.to_owned() }).collect()
     }).collect()
-  }
-
-  fn t2_i(source: Vec<&[i32]>) -> Vec<Vec<i32>> {
-    source.into_iter().map(|s| { s.to_owned() }).collect()
   }
 
   fn t2_c(source: Vec<&[&str]>) -> Vec<Vec<char>> {

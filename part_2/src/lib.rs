@@ -119,6 +119,7 @@ mod find_restaurant;
 mod count_max_or_subsets;
 mod all_one;
 mod longest_word;
+mod bank;
 
 pub struct Solution {}
 
