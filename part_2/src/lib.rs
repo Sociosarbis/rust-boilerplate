@@ -120,6 +120,7 @@ mod count_max_or_subsets;
 mod all_one;
 mod longest_word;
 mod bank;
+mod find_target;
 
 pub struct Solution {}
 
