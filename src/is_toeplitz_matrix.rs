@@ -41,11 +41,11 @@ mod tests {
   fn is_toeplitz_matrix_simple() {
     let suites = vec![
       Suite {
-        matrix: Solution::t2_i(vec![&[1,2,3,4],&[5,1,2,3],&[9,5,1,2]]),
+        matrix: t2_i![[1,2,3,4],[5,1,2,3],[9,5,1,2]],
         ret: true
       },
       Suite {
-        matrix: Solution::t2_i(vec![&[1,2],&[2,2]]),
+        matrix: t2_i![[1,2],[2,2]],
         ret: false
       }
     ];

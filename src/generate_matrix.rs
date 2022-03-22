@@ -75,11 +75,11 @@ mod tests {
     let suites = vec![
       Suite {
         n: 3,
-        ret: Solution::t2_i(vec![&[1,2,3],&[8,9,4],&[7,6,5]])
+        ret: t2_i![[1,2,3],[8,9,4],[7,6,5]]
       },
       Suite {
         n: 1,
-        ret: Solution::t2_i(vec![&[1]])
+        ret: t2_i![[1]]
       }
     ];
 

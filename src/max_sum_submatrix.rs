@@ -89,17 +89,17 @@ mod tests {
   fn test_max_num_submatrix_simple() {
     let suites = vec![
       Suite {
-        matrix: Solution::t2_i(vec![&[1,0,1],&[0,-2,3]]),
+        matrix: t2_i![[1,0,1],[0,-2,3]],
         k: 2,
         ret: 2,
       },
       Suite {
-        matrix: Solution::t2_i(vec![&[2,2,-1]]),
+        matrix: t2_i![[2,2,-1]],
         k: 3,
         ret: 3
       },
       Suite {
-        matrix: Solution::t2_i(vec![&[5,-4,-3,4],&[-3,-4,4,5],&[5,1,5,-4]]),
+        matrix: t2_i![[5,-4,-3,4],[-3,-4,4,5],[5,1,5,-4]],
         k: 3,
         ret: 2
       }

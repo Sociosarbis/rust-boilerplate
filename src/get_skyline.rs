@@ -51,26 +51,26 @@ impl Solution {
 mod tests {
   use super::*;
 
-  struct Suite<'a> {
-    buildings: Vec<&'a[i32]>,
-    ret: Vec<&'a[i32]>,
+  struct Suite {
+    buildings: Vec<Vec<i32>>,
+    ret: Vec<Vec<i32>>,
   }
 
   #[test]
   fn test_get_skyline_simple() {
     let suites = vec![
       Suite {
-        buildings: vec![&[2,9,10],&[3,7,15],&[5,12,12],&[15,20,10],&[19,24,8]],
-        ret: vec![&[2,10],&[3,15],&[7,12],&[12,0],&[15,10],&[20,8],&[24,0]]
+        buildings: t2_i![[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]],
+        ret: t2_i![[2,10],[3,15],[7,12],[12,0],[15,10],[20,8],[24,0]]
       },
       Suite {
-        buildings: vec![&[0,2,3],&[2,5,3]],
-        ret: vec![&[0,3],&[5,0]]
+        buildings: t2_i![[0,2,3],[2,5,3]],
+        ret: t2_i![[0,3],[5,0]]
       }
     ];
     
     for s in suites {
-      assert_eq!(Solution::t2_i(s.ret), Solution::get_skyline(Solution::t2_i(s.buildings)));
+      assert_eq!(s.ret, Solution::get_skyline(s.buildings));
     }
   }
 }

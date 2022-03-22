@@ -40,12 +40,12 @@ mod tests {
     let suites = vec![
       Suite {
         arr: vec![1,3,4,8],
-        queries: Solution::t2_i(vec![&[0,1],&[1,2],&[0,3],&[3,3]]),
+        queries: t2_i![[0,1],[1,2],[0,3],[3,3]],
         ret: vec![2,7,14,8]
       },
       Suite {
         arr: vec![4,8,2,10],
-        queries: Solution::t2_i(vec![&[2,3],&[1,3],&[0,0],&[0,3]]),
+        queries: t2_i![[2,3],[1,3],[0,0],[0,3]],
         ret: vec![8,0,4,4]
       }
     ];

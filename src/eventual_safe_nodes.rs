@@ -41,8 +41,8 @@ impl Solution {
 mod tests {
   use super::*;
 
-  struct Suite<'a> {
-    graph: Vec<&'a[i32]>,
+  struct Suite {
+    graph: Vec<Vec<i32>>,
     ret: Vec<i32>
   }
 
@@ -50,17 +50,17 @@ mod tests {
   fn test_eventual_safe_nodes_simple() {
     let suites = vec![
       Suite {
-        graph: vec![&[1,2],&[2,3],&[5],&[0],&[5],&[],&[]],
+        graph: t2_i![[1,2],[2,3],[5],[0],[5],[],[]],
         ret: vec![2,4,5,6]
       },
       Suite {
-        graph: vec![&[1,2,3,4],&[1,2],&[3,4],&[0,4],&[]],
+        graph: t2_i![[1,2,3,4],[1,2],[3,4],[0,4],[]],
         ret: vec![4]
       }
     ];
 
     for s in suites {
-      assert_eq!(s.ret, Solution::eventual_safe_nodes(Solution::t2_i(s.graph)));
+      assert_eq!(s.ret, Solution::eventual_safe_nodes(s.graph));
     }
   }
 }

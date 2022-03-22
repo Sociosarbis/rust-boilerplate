@@ -69,7 +69,7 @@ mod tests {
   fn spiral_order_simple() {
     let suites = vec![
       Suite {
-        matrix: Solution::t2_i(vec![&[1,2,3,4],&[5,6,7,8],&[9,10,11,12]]),
+        matrix: t2_i![[1,2,3,4],[5,6,7,8],[9,10,11,12]],
         ret: vec![1,2,3,4,8,12,11,10,9,5,6,7]
       }
     ];

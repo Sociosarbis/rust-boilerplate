@@ -53,12 +53,12 @@ mod tests {
   fn test_search_matrix_simple() {
     let suites = vec![
       Suite {
-        matrix: Solution::t2_i(vec![&[1,3,5,7],&[10,11,16,20],&[23,30,34,60]]),
+        matrix: t2_i![[1,3,5,7],[10,11,16,20],[23,30,34,60]],
         target: 3,
         ret: true,
       },
       Suite {
-        matrix: Solution::t2_i(vec![&[1,3,5,7],&[10,11,16,20],&[23,30,34,60]]),
+        matrix: t2_i![[1,3,5,7],[10,11,16,20],[23,30,34,60]],
         target: 13,
         ret: false
       }

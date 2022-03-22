@@ -50,11 +50,11 @@ mod tests {
   fn max_envelopes_simple() {
     let suites = vec![
       Suite {
-        envelopes: Solution::t2_i(vec![&[5,4],&[6,4],&[6,7],&[2,3]]),
+        envelopes: t2_i![[5,4],[6,4],[6,7],[2,3]],
         ret: 3
       },
       Suite {
-        envelopes: Solution::t2_i(vec![&[1,1],&[1,1],&[1,1]]),
+        envelopes: t2_i![[1,1],[1,1],[1,1]],
         ret: 1
       }
     ];

@@ -45,8 +45,8 @@ impl Solution {
 mod tests {
   use super::*;
 
-  struct Suite<'a> {
-    graph: Vec<&'a [i32]>,
+  struct Suite {
+    graph: Vec<Vec<i32>>,
     ret: i32
   }
 
@@ -54,17 +54,17 @@ mod tests {
   fn test_shortest_path_length_simple() {
     let suites = vec![
       Suite {
-        graph: vec![&[1,2,3],&[0],&[0],&[0]],
+        graph: t2_i![[1,2,3],[0],[0],[0]],
         ret: 4
       },
       Suite {
-        graph: vec![&[1],&[0,2,4],&[1,3,4],&[2],&[1,2]],
+        graph: t2_i![[1],[0,2,4],[1,3,4],[2],[1,2]],
         ret: 4
       },
     ];
 
     for s in suites {
-      assert_eq!(s.ret, Solution::shortest_path_length(Solution::t2_i(s.graph)));
+      assert_eq!(s.ret, Solution::shortest_path_length(s.graph));
     }
   }
 }

@@ -27,8 +27,8 @@ impl Solution {
 mod tests {
   use super::*;
 
-  struct Suite<'a> {
-    ranges: Vec<&'a[i32]>,
+  struct Suite {
+    ranges: Vec<Vec<i32>>,
     left: i32,
     right: i32,
     ret: bool
@@ -38,13 +38,13 @@ mod tests {
   fn test_is_covered_simple() {
     let suites = vec![
       Suite {
-        ranges: vec![&[1,2],&[3,4],&[5,6]],
+        ranges: t2_i![[1,2],[3,4],[5,6]],
         left: 2,
         right: 5,
         ret: true
       },
       Suite {
-        ranges: vec![&[1,10],&[10,20]],
+        ranges: t2_i![[1,10],[10,20]],
         left: 21,
         right: 21,
         ret: false
@@ -52,7 +52,7 @@ mod tests {
     ];
 
     for s in suites {
-      assert_eq!(s.ret, Solution::is_covered(Solution::t2_i(s.ranges), s.left, s.right));
+      assert_eq!(s.ret, Solution::is_covered(s.ranges, s.left, s.right));
     }
   }
 }

@@ -72,8 +72,8 @@ impl Solution {
 mod tests {
   use super::*;
 
-  struct Suite<'a> {
-    times: Vec<&'a[i32]>,
+  struct Suite {
+    times: Vec<Vec<i32>>,
     n: i32,
     k: i32,
     ret: i32
@@ -83,19 +83,19 @@ mod tests {
   fn test_network_delay_time_simple() {
     let suites = vec![
       Suite {
-        times: vec![&[2,1,1],&[2,3,1],&[3,4,1]],
+        times: t2_i![[2,1,1],[2,3,1],[3,4,1]],
         n: 4,
         k: 2,
         ret: 2
       },
       Suite {
-        times: vec![&[1,2,1]],
+        times: t2_i![[1,2,1]],
         n: 2,
         k: 1,
         ret: 1
       },
       Suite {
-        times: vec![&[1,2,1]],
+        times: t2_i![[1,2,1]],
         n: 2,
         k: 2,
         ret: -1
@@ -103,7 +103,7 @@ mod tests {
     ];
     
     for s in suites {
-      assert_eq!(s.ret, Solution::network_delay_time(Solution::t2_i(s.times), s.n, s.k));
+      assert_eq!(s.ret, Solution::network_delay_time(s.times, s.n, s.k));
     }
   }
 }

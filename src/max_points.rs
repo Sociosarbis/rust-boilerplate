@@ -53,8 +53,8 @@ impl Solution {
 mod tests {
   use super::*;
 
-  struct Suite<'a> {
-    points: Vec<&'a [i32]>,
+  struct Suite {
+    points: Vec<Vec<i32>>,
     ret: i32
   }
 
@@ -62,25 +62,25 @@ mod tests {
   fn test_max_points_simple() {
     let suites = vec![
       Suite {
-        points: vec![&[1,1],&[2,2],&[3,3]],
+        points: t2_i![[1,1],[2,2],[3,3]],
         ret: 3
       },
       Suite {
-        points: vec![&[1,1],&[3,2],&[5,3],&[4,1],&[2,3],&[1,4]],
+        points: t2_i![[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]],
         ret: 4
       },
       Suite {
-        points: vec![&[-6,-1],&[3,1],&[12,3]],
+        points: t2_i![[-6,-1],[3,1],[12,3]],
         ret: 3
       },
       Suite {
-        points: vec![&[5151,5150],&[0,0],&[5152,5151]],
+        points: t2_i![[5151,5150],[0,0],[5152,5151]],
         ret: 2
       }
     ];
 
     for s in suites {
-      assert_eq!(Solution::max_points(Solution::t2_i(s.points)), s.ret);
+      assert_eq!(Solution::max_points(s.points), s.ret);
     }
   }
 

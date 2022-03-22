@@ -44,19 +44,19 @@ mod tests {
   fn minimum_effort_path_simple() {
     let suites = vec![
       Suite {
-        heights: Solution::t2_i(vec![&[1,2,2],&[3,8,2],&[5,3,5]]),
+        heights: t2_i![[1,2,2],[3,8,2],[5,3,5]],
         ret: 2
       },
       Suite {
-        heights: Solution::t2_i(vec![&[1,2,3],&[3,8,4],&[5,3,5]]),
+        heights: t2_i![[1,2,3],[3,8,4],[5,3,5]],
         ret: 1
       },
       Suite {
-        heights: Solution::t2_i(vec![&[1,2,1,1,1],&[1,2,1,2,1],&[1,2,1,2,1],&[1,2,1,2,1],&[1,1,1,2,1]]),
+        heights: t2_i![[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]],
         ret: 0
       },
       Suite {
-        heights: Solution::t2_i(vec![&[1,10,6,7,9,10,4,9]]),
+        heights:t2_i![[1,10,6,7,9,10,4,9]],
         ret: 9
       }
     ];

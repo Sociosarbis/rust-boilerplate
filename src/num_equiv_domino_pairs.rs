@@ -38,7 +38,7 @@ mod tests {
   fn num_equiv_domino_pairs_simple() {
     let suites = vec![
       Suite {
-        dominoes: Solution::t2_i(vec![&[1,2],&[2,1],&[3,4],&[5,6]]),
+        dominoes: t2_i![[1,2],[2,1],[3,4],[5,6]],
         ret: 1
       }
     ];

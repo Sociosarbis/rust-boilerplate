@@ -39,22 +39,22 @@ mod tests {
   fn test_kth_largest_value_simple() {
     let suites = vec![
       Suite {
-        matrix: Solution::t2_i(vec![&[5,2],&[1,6]]),
+        matrix: t2_i![[5,2],[1,6]],
         k: 1,
         ret: 7,
       },
       Suite {
-        matrix: Solution::t2_i(vec![&[5,2],&[1,6]]),
+        matrix: t2_i![[5,2],[1,6]],
         k: 2,
         ret: 5,
       },
       Suite {
-        matrix: Solution::t2_i(vec![&[5,2],&[1,6]]),
+        matrix: t2_i![[5,2],[1,6]],
         k: 3,
         ret: 4,
       },
       Suite {
-        matrix: Solution::t2_i(vec![&[5,2],&[1,6]]),
+        matrix: t2_i![[5,2],[1,6]],
         k: 4,
         ret: 0,
       },

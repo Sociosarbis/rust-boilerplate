@@ -57,7 +57,7 @@ mod tests {
     let suites = vec![
       Suite {
         nums: vec![-2, 0, 3, -5, 2, -1],
-        ranges: Solution::t2_i(vec![&[0, 2], &[2, 5], &[0, 5]]),
+        ranges: t2_i![[0, 2], [2, 5], [0, 5]],
         rets: vec![1, -1, -3]
       }
     ];

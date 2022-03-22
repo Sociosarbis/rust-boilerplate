@@ -72,19 +72,19 @@ mod tests {
   fn min_cost_connect_points_simple() {
     let suites = vec![
       Suite {
-        points: Solution::t2_i(vec![&[0,0],&[2,2],&[3,10],&[5,2],&[7,0]]),
+        points: t2_i![[0,0],[2,2],[3,10],[5,2],[7,0]],
         ret: 20
       },
       Suite {
-        points: Solution::t2_i(vec![&[3,12],&[-2,5],&[-4,1]]),
+        points: t2_i![[3,12],[-2,5],[-4,1]],
         ret: 18,
       },
       Suite {
-        points: Solution::t2_i(vec![&[0,0],&[1,1],&[1,0],&[-1,1]]),
+        points: t2_i![[0,0],[1,1],[1,0],[-1,1]],
         ret: 4
       },
       Suite {
-        points: Solution::t2_i(vec![&[-1000000,-1000000],&[1000000,1000000]]),
+        points: t2_i![[-1000000,-1000000],[1000000,1000000]],
         ret: 4000000
       }
     ];

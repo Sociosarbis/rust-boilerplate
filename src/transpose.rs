@@ -27,12 +27,12 @@ mod tests {
   fn transpose_simple() {
     let suites = vec![
       Suite {
-        matrix: Solution::t2_i(vec![&[1,2,3],&[4,5,6],&[7,8,9]]),
-        ret: Solution::t2_i(vec![&[1,4,7],&[2,5,8],&[3,6,9]])
+        matrix: t2_i![[1,2,3],[4,5,6],[7,8,9]],
+        ret: t2_i![[1,4,7],[2,5,8],[3,6,9]]
       },
       Suite {
-        matrix: Solution::t2_i(vec![&[1,2,3],&[4,5,6]]),
-        ret: Solution::t2_i(vec![&[1,4],&[2,5],&[3,6]])
+        matrix: t2_i![[1,2,3],[4,5,6]],
+        ret: t2_i![[1,4],[2,5],[3,6]]
       }
     ];
     for s in suites {
