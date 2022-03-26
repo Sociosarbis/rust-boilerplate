@@ -122,6 +122,7 @@ mod longest_word;
 mod bank;
 mod find_target;
 mod winner_of_game;
+mod cal_points;
 
 pub struct Solution {}
 
