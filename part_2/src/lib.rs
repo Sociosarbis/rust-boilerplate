@@ -123,6 +123,7 @@ mod bank;
 mod find_target;
 mod winner_of_game;
 mod cal_points;
+mod self_dividing_numbers;
 
 pub struct Solution {}
 
