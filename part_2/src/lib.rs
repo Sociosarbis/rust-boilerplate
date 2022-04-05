@@ -124,6 +124,7 @@ mod find_target;
 mod winner_of_game;
 mod cal_points;
 mod self_dividing_numbers;
+mod count_prime_set_bits;
 
 pub struct Solution {}
 
