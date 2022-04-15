@@ -126,6 +126,7 @@ mod cal_points;
 mod self_dividing_numbers;
 mod count_prime_set_bits;
 mod count_numbers_with_unique_digits;
+mod deserialize;
 
 pub struct Solution {}
 
