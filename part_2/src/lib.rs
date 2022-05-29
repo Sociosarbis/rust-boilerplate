@@ -128,6 +128,7 @@ mod count_prime_set_bits;
 mod count_numbers_with_unique_digits;
 mod deserialize;
 mod repeated_n_times;
+mod valid_ip_address;
 
 pub struct Solution {}
 
