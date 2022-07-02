@@ -131,6 +131,7 @@ mod repeated_n_times;
 mod valid_ip_address;
 mod rand_point;
 mod find_frequent_tree_sum;
+mod diff_ways_to_compute;
 
 pub struct Solution {}
 
