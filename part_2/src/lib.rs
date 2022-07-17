@@ -133,6 +133,7 @@ mod rand_point;
 mod find_frequent_tree_sum;
 mod diff_ways_to_compute;
 mod len_longest_fib_subseq;
+mod array_nesting;
 
 pub struct Solution {}
 
