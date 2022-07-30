@@ -134,6 +134,7 @@ mod find_frequent_tree_sum;
 mod diff_ways_to_compute;
 mod len_longest_fib_subseq;
 mod array_nesting;
+mod largest_component_size;
 
 pub struct Solution {}
 
