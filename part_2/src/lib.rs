@@ -136,6 +136,7 @@ mod len_longest_fib_subseq;
 mod array_nesting;
 mod largest_component_size;
 mod exclusive_time;
+mod construct_maximum_binary_tree;
 
 pub struct Solution {}
 
