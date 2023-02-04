@@ -44,6 +44,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "part_3"
+version = "0.1.0"
+dependencies = [
+ "rand",
+ "solution",
+]
+
+[[package]]
 name = "ppv-lite86"
 version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -113,6 +121,7 @@ version = "0.1.0"
 dependencies = [
  "macros",
  "part_2",
+ "part_3",
  "solution",
  "utils",
 ]
