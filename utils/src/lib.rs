@@ -1,3 +1,5 @@
+mod error;
+
 #[macro_export]
 macro_rules! count_args {
     ($i:ident, $($other: ident),*) => {
