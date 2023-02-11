@@ -6,6 +6,7 @@ mod minimum_moves;
 mod alert_names;
 mod autentication_manager;
 mod die_simulator;
+mod flip_cups;
 
 pub struct Solution {}
 
