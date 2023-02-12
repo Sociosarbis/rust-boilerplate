@@ -7,6 +7,7 @@ mod alert_names;
 mod autentication_manager;
 mod die_simulator;
 mod flip_cups;
+mod alphabet_board_path;
 
 pub struct Solution {}
 
