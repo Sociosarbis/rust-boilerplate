@@ -8,6 +8,7 @@ mod autentication_manager;
 mod die_simulator;
 mod flip_cups;
 mod alphabet_board_path;
+mod balanced_string;
 
 pub struct Solution {}
 
