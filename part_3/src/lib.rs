@@ -9,6 +9,7 @@ mod die_simulator;
 mod flip_cups;
 mod alphabet_board_path;
 mod balanced_string;
+mod longest_wpi;
 
 pub struct Solution {}
 
