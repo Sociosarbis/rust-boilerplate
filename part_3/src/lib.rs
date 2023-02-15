@@ -10,6 +10,7 @@ mod flip_cups;
 mod alphabet_board_path;
 mod balanced_string;
 mod longest_wpi;
+mod is_good_array;
 
 pub struct Solution {}
 
