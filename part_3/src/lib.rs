@@ -11,6 +11,7 @@ mod alphabet_board_path;
 mod balanced_string;
 mod longest_wpi;
 mod is_good_array;
+mod number_or_pairs;
 
 pub struct Solution {}
 
