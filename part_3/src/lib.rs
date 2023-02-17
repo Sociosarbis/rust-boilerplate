@@ -12,6 +12,7 @@ mod balanced_string;
 mod longest_wpi;
 mod is_good_array;
 mod number_or_pairs;
+mod largest1_bordered_square;
 
 pub struct Solution {}
 
