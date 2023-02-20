@@ -15,6 +15,7 @@ mod number_or_pairs;
 mod largest1_bordered_square;
 mod find_solution;
 mod max_average_ratio;
+mod best_hand;
 
 pub struct Solution {}
 
