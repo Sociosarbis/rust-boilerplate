@@ -16,6 +16,7 @@ mod largest1_bordered_square;
 mod find_solution;
 mod max_average_ratio;
 mod best_hand;
+mod min_taps;
 
 pub struct Solution {}
 
