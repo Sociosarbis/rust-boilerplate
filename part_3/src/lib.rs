@@ -17,6 +17,7 @@ mod find_solution;
 mod max_average_ratio;
 mod best_hand;
 mod min_taps;
+mod stone_game_ii;
 
 pub struct Solution {}
 
