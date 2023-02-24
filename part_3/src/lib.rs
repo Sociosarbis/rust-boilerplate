@@ -19,6 +19,7 @@ mod best_hand;
 mod min_taps;
 mod stone_game_ii;
 mod circular_permutation;
+mod minimum_operations;
 
 pub struct Solution {}
 
