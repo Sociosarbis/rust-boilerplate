@@ -20,6 +20,7 @@ mod min_taps;
 mod stone_game_ii;
 mod circular_permutation;
 mod minimum_operations;
+mod minimum_swap;
 
 pub struct Solution {}
 
