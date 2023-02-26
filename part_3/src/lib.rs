@@ -21,6 +21,7 @@ mod stone_game_ii;
 mod circular_permutation;
 mod minimum_operations;
 mod minimum_swap;
+mod max_score_words;
 
 pub struct Solution {}
 
