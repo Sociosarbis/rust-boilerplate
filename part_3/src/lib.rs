@@ -22,6 +22,7 @@ mod circular_permutation;
 mod minimum_operations;
 mod minimum_swap;
 mod max_score_words;
+mod moves_to_make_zigzag;
 
 pub struct Solution {}
 
