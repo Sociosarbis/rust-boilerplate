@@ -25,6 +25,7 @@ mod max_score_words;
 mod moves_to_make_zigzag;
 mod merge_similar_items;
 mod largest_local;
+mod print_bin;
 
 pub struct Solution {}
 
