@@ -26,6 +26,7 @@ mod moves_to_make_zigzag;
 mod merge_similar_items;
 mod largest_local;
 mod print_bin;
+mod get_folder_names;
 
 pub struct Solution {}
 
