@@ -27,6 +27,7 @@ mod merge_similar_items;
 mod largest_local;
 mod print_bin;
 mod get_folder_names;
+mod count_triplets;
 
 pub struct Solution {}
 
