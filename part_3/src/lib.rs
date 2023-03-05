@@ -28,6 +28,7 @@ mod largest_local;
 mod print_bin;
 mod get_folder_names;
 mod count_triplets;
+mod min_operations_max_profit;
 
 pub struct Solution {}
 
