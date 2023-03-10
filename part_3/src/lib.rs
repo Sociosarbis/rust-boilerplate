@@ -33,6 +33,7 @@ mod minimum_deletions;
 mod brace_expansion_ii;
 mod max_value;
 mod minimum_recolors;
+mod min_subarray;
 
 pub struct Solution {}
 
