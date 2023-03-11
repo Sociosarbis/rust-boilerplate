@@ -34,6 +34,7 @@ mod brace_expansion_ii;
 mod max_value;
 mod minimum_recolors;
 mod min_subarray;
+mod find_longest_subarray;
 
 pub struct Solution {}
 
