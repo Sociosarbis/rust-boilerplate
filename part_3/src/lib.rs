@@ -37,6 +37,7 @@ mod min_subarray;
 mod find_longest_subarray;
 mod count_subgraphs_for_each_diameter;
 mod min_number_of_hours;
+mod restore_matrix;
 
 pub struct Solution {}
 
