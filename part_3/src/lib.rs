@@ -38,6 +38,7 @@ mod find_longest_subarray;
 mod count_subgraphs_for_each_diameter;
 mod min_number_of_hours;
 mod restore_matrix;
+mod maximal_network_rank;
 
 pub struct Solution {}
 
