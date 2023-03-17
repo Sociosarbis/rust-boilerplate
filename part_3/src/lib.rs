@@ -40,6 +40,7 @@ mod min_number_of_hours;
 mod restore_matrix;
 mod maximal_network_rank;
 mod count_subarrays;
+mod answer_queries;
 
 pub struct Solution {}
 
