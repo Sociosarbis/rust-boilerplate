@@ -41,6 +41,7 @@ mod restore_matrix;
 mod maximal_network_rank;
 mod count_subarrays;
 mod answer_queries;
+mod check_palindrome_formation;
 
 pub struct Solution {}
 
