@@ -43,6 +43,7 @@ mod count_subarrays;
 mod answer_queries;
 mod check_palindrome_formation;
 mod find_lex_smallest_string;
+mod num_dup_digits_at_most_n;
 
 pub struct Solution {}
 
