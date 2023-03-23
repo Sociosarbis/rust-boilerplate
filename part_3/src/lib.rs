@@ -46,6 +46,7 @@ mod find_lex_smallest_string;
 mod num_dup_digits_at_most_n;
 mod convert_temperature;
 mod best_team_score;
+mod check_arithmetic_subarrays;
 
 pub struct Solution {}
 
