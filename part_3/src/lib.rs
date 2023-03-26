@@ -48,6 +48,7 @@ mod convert_temperature;
 mod best_team_score;
 mod check_arithmetic_subarrays;
 mod find_length_of_shortest_subarray;
+mod find_subarrays;
 
 pub struct Solution {}
 
