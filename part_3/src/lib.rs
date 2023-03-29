@@ -50,6 +50,7 @@ mod check_arithmetic_subarrays;
 mod find_length_of_shortest_subarray;
 mod find_subarrays;
 mod shortest_common_supersequence;
+mod count_vowel_strings;
 
 pub struct Solution {}
 
