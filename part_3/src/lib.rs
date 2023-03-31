@@ -51,6 +51,7 @@ mod find_length_of_shortest_subarray;
 mod find_subarrays;
 mod shortest_common_supersequence;
 mod count_vowel_strings;
+mod max_width_of_vertical_area;
 
 pub struct Solution {}
 
