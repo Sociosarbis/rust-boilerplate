@@ -52,6 +52,7 @@ mod find_subarrays;
 mod shortest_common_supersequence;
 mod count_vowel_strings;
 mod max_width_of_vertical_area;
+mod arithmetic_triplets;
 
 pub struct Solution {}
 
