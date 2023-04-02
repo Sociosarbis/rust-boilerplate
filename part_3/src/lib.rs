@@ -54,6 +54,7 @@ mod count_vowel_strings;
 mod max_width_of_vertical_area;
 mod arithmetic_triplets;
 mod mask_pii;
+mod min_score_triangulation;
 
 pub struct Solution {}
 
