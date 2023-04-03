@@ -55,6 +55,7 @@ mod max_width_of_vertical_area;
 mod arithmetic_triplets;
 mod mask_pii;
 mod min_score_triangulation;
+mod prev_perm_opt1;
 
 pub struct Solution {}
 
