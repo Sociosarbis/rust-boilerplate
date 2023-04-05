@@ -57,6 +57,7 @@ mod mask_pii;
 mod min_score_triangulation;
 mod prev_perm_opt1;
 mod merge_stones;
+mod common_factors;
 
 pub struct Solution {}
 
