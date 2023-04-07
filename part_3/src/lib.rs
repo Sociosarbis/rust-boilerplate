@@ -59,6 +59,7 @@ mod prev_perm_opt1;
 mod merge_stones;
 mod common_factors;
 mod base_neg2;
+mod num_moves_stones_ii;
 
 pub struct Solution {}
 
