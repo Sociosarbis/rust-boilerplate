@@ -61,6 +61,7 @@ mod common_factors;
 mod base_neg2;
 mod num_moves_stones_ii;
 mod smallest_sufficient_team;
+mod check_distance;
 
 pub struct Solution {}
 
