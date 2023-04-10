@@ -62,6 +62,7 @@ mod base_neg2;
 mod num_moves_stones_ii;
 mod smallest_sufficient_team;
 mod check_distance;
+mod next_larger_nodes;
 
 pub struct Solution {}
 
