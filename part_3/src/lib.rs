@@ -63,6 +63,7 @@ mod num_moves_stones_ii;
 mod smallest_sufficient_team;
 mod check_distance;
 mod next_larger_nodes;
+mod is_robot_bounded;
 
 pub struct Solution {}
 
