@@ -64,6 +64,7 @@ mod smallest_sufficient_team;
 mod check_distance;
 mod next_larger_nodes;
 mod is_robot_bounded;
+mod longest_decomposition;
 
 pub struct Solution {}
 
