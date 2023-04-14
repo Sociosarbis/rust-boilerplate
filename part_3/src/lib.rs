@@ -66,6 +66,7 @@ mod next_larger_nodes;
 mod is_robot_bounded;
 mod longest_decomposition;
 mod most_frequent_even;
+mod camel_match;
 
 pub struct Solution {}
 
