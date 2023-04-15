@@ -67,6 +67,7 @@ mod is_robot_bounded;
 mod longest_decomposition;
 mod most_frequent_even;
 mod camel_match;
+mod garden_no_adj;
 
 pub struct Solution {}
 
