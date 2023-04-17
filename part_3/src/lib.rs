@@ -68,6 +68,7 @@ mod longest_decomposition;
 mod most_frequent_even;
 mod camel_match;
 mod garden_no_adj;
+mod count_days_together;
 
 pub struct Solution {}
 
