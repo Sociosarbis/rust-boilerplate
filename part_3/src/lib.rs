@@ -70,6 +70,7 @@ mod camel_match;
 mod garden_no_adj;
 mod count_days_together;
 mod max_sum_after_partitioning;
+mod make_array_increasing;
 
 pub struct Solution {}
 
