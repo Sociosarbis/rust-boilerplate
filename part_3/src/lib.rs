@@ -72,6 +72,7 @@ mod count_days_together;
 mod max_sum_after_partitioning;
 mod make_array_increasing;
 mod smallest_even_multiple;
+mod longest_arith_seq_length;
 
 pub struct Solution {}
 
