@@ -74,6 +74,7 @@ mod make_array_increasing;
 mod smallest_even_multiple;
 mod longest_arith_seq_length;
 mod min_height_shelves;
+mod last_substring;
 
 pub struct Solution {}
 
