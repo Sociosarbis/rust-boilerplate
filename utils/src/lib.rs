@@ -1,3 +1,5 @@
+use std::{io::{Read, Cursor, Bytes}, iter::Peekable};
+
 mod error;
 
 #[macro_export]
@@ -25,4 +27,8 @@ macro_rules! flat_print {
     () => {
         println!();
     };
+}
+
+pub fn str_to_readable(s: &str) -> Peekable<Bytes<Cursor<&str>>> {
+    Cursor::new(s).bytes().peekable()
 }
