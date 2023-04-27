@@ -77,6 +77,7 @@ mod min_height_shelves;
 mod last_substring;
 mod sort_people;
 mod max_sum_two_no_overlap;
+mod longest_str_chain;
 
 pub struct Solution {}
 
