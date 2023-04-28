@@ -78,6 +78,7 @@ mod last_substring;
 mod sort_people;
 mod max_sum_two_no_overlap;
 mod longest_str_chain;
+mod dinner_plates;
 
 pub struct Solution {}
 
