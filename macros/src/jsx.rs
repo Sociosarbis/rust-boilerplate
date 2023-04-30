@@ -25,7 +25,7 @@ impl Parse for JSXElement {
             tag
           })
         } else {
-          Err(Error::new(ty.span(), "end tag doen't match start tag"))
+          Err(Error::new(ty.span(), "end tag doesn't match start tag"))
         }
       }
   }

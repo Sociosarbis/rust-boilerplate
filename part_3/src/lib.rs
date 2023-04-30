@@ -80,6 +80,7 @@ mod max_sum_two_no_overlap;
 mod longest_str_chain;
 mod dinner_plates;
 mod equal_frequency;
+mod num_moves_stone;
 
 pub struct Solution {}
 
