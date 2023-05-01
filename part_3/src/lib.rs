@@ -81,6 +81,7 @@ mod longest_str_chain;
 mod dinner_plates;
 mod equal_frequency;
 mod num_moves_stone;
+mod num_of_minutes;
 
 pub struct Solution {}
 
