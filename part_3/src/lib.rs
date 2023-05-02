@@ -82,6 +82,7 @@ mod dinner_plates;
 mod equal_frequency;
 mod num_moves_stone;
 mod num_of_minutes;
+mod powerful_integers;
 
 pub struct Solution {}
 
