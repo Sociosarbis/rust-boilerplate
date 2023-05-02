@@ -93,3 +93,8 @@ pub fn custom_log(_: TokenStream, input: TokenStream) -> TokenStream {
      };
     TokenStream::from(expanded)
 }
+
+#[proc_macro]
+pub fn parse_jsx(input: TokenStream) -> TokenStream {
+    jsx::parse_jsx_impl(input)
+}
