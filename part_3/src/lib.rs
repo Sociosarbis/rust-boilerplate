@@ -84,6 +84,7 @@ mod num_moves_stone;
 mod num_of_minutes;
 mod powerful_integers;
 mod is_valid;
+mod max_total_fruits;
 
 pub struct Solution {}
 
