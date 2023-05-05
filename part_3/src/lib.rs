@@ -85,6 +85,7 @@ mod num_of_minutes;
 mod powerful_integers;
 mod is_valid;
 mod max_total_fruits;
+mod hardest_worker;
 
 pub struct Solution {}
 
