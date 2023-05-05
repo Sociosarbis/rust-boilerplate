@@ -1,7 +1,7 @@
 use proc_macro::TokenStream;
-use proc_macro2::{Ident, token_stream};
-use quote::{quote, ToTokens};
-use syn::{parse::{ Parse, ParseStream, Result }, Token, Error, Expr, braced, parse_macro_input, parse_str, LitStr};
+use proc_macro2::{Ident};
+use quote::{quote, ToTokens, TokenStreamExt};
+use syn::{parse::{ Parse, ParseStream, Result }, Token, Error, Expr, braced, parse_macro_input };
 
 pub struct Prop {
   pub name: Ident,
@@ -21,6 +21,7 @@ impl Parse for JSXElement {
       let mut props = vec![];
       while !(input.peek(Token![/]) || input.peek(Token![>])) {
         let name: Ident = input.parse()?;
+        input.parse::<Token![=]>()?;
         let content;
         braced!(content in input);
         let mut stmts = vec![];
@@ -42,7 +43,7 @@ impl Parse for JSXElement {
       } else {
         input.parse::<Token![>]>()?;
         let mut children = vec![];
-        while !input.peek(Token![>]) && input.peek2(Token![/]) {
+        while !(input.peek(Token![<]) && input.peek2(Token![/])) {
           children.push(JSXElement::parse(input)?);
         }
         input.parse::<Token![<]>()?;
@@ -62,10 +63,30 @@ impl Parse for JSXElement {
   }
 }
 
+impl ToTokens for Prop {
+  fn to_tokens(&self, tokens: &mut proc_macro2::TokenStream) {
+    let name = self.name.to_string();
+    let value = &self.value;
+    tokens.append_all(quote! {
+      format!("{}:{}", #name, {#(#value)*})
+    })
+  }
+}
+
+impl ToTokens for JSXElement {
+    fn to_tokens(&self, tokens: &mut proc_macro2::TokenStream) {
+      let tag_name = self.tag.to_string();
+      let props = &self.props;
+      let children = &self.children;
+      tokens.append_all(quote! {
+        format!("createElement('{}', {{{}}}, [{}])", #tag_name, (vec![#(#props),*] as Vec<String>).join(","), (vec![#(#children),*] as Vec<String>).join(","))
+      })
+    }
+}
+
 pub fn parse_jsx_impl(input: TokenStream) -> TokenStream {
   let el = parse_macro_input!(input as JSXElement);
-  let tag_name = el.tag.to_string();
   quote! {
-    println!("createElement {:?}", #tag_name);
+    println!("{}", #el);
   }.into()
 }
