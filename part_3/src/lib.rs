@@ -86,6 +86,7 @@ mod powerful_integers;
 mod is_valid;
 mod max_total_fruits;
 mod hardest_worker;
+mod min_number_of_frogs;
 
 pub struct Solution {}
 
