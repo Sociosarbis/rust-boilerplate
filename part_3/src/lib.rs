@@ -89,6 +89,7 @@ mod hardest_worker;
 mod min_number_of_frogs;
 mod num_pairs_divisible_by60;
 mod min_push_box;
+mod count_time;
 
 pub struct Solution {}
 
