@@ -91,6 +91,7 @@ mod num_pairs_divisible_by60;
 mod min_push_box;
 mod count_time;
 mod smallest_repunit_div_by_k;
+mod query_string;
 
 pub struct Solution {}
 
