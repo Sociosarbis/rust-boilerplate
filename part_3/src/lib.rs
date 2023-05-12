@@ -92,6 +92,7 @@ mod min_push_box;
 mod count_time;
 mod smallest_repunit_div_by_k;
 mod query_string;
+mod max_value_after_reverse;
 
 pub struct Solution {}
 
