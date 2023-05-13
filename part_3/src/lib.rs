@@ -93,6 +93,7 @@ mod count_time;
 mod smallest_repunit_div_by_k;
 mod query_string;
 mod max_value_after_reverse;
+mod find_max_k;
 
 pub struct Solution {}
 
