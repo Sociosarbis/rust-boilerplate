@@ -97,6 +97,7 @@ mod find_max_k;
 mod rearrange_barcodes;
 mod max_equal_rows_after_flips;
 mod min_difficulty;
+mod have_conflict;
 
 pub struct Solution {}
 
