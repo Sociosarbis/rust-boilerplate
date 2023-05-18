@@ -98,6 +98,7 @@ mod rearrange_barcodes;
 mod max_equal_rows_after_flips;
 mod min_difficulty;
 mod have_conflict;
+mod add_negabinary;
 
 pub struct Solution {}
 
