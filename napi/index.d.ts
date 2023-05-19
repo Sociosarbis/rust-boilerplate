@@ -5,3 +5,4 @@
 
 export function sum(a: object, b: number): number
 export function distance(a: number[], b: number[]): number
+export function last(a: unknown[]): unknown

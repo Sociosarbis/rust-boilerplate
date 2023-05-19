@@ -1,6 +1,6 @@
 #![deny(clippy::all)]
 
-use napi::{Env, JsNumber, JsObject, JsString, NapiValue};
+use napi::{Env, JsNumber, JsObject, JsString, JsUndefined, NapiValue};
 
 #[macro_use]
 extern crate napi_derive;
@@ -85,4 +85,28 @@ pub fn distance(env: Env, a: JsObject, b: JsObject) -> napi::Result<f64> {
     }
   }
   Err(napi::Error::from_status(napi::Status::InvalidArg))
+}
+
+macro_rules! get_element {
+    ($e: ident, $a: ident, $i: expr, $either_typ: ident, $t1: ty) => {
+      if let Ok(v) = $a.get_element::<$t1>($i) {
+        Ok(napi::$either_typ::B(v))
+      } else {
+        Ok(napi::Either::A($e.get_undefined()?))
+      }
+    };
+    ($e: ident, $a: ident, $i: expr, $t1: ty) => {
+      get_element!($e, $a, $i, Either, $t1)
+  };
+}
+
+#[napi(ts_args_type = "a: unknown[]", ts_return_type = "unknown")]
+pub fn last(env: Env, a: JsObject) -> napi::Result<napi::Either<JsUndefined, JsObject>> {
+  if a.is_array()? {
+    let n = a.get_array_length()?;
+    if n > 0 {
+      return get_element!(env, a, n - 1, JsObject);
+    }
+  }
+  Ok(napi::Either::A(env.get_undefined()?))
 }
