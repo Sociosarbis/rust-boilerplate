@@ -100,6 +100,7 @@ mod min_difficulty;
 mod have_conflict;
 mod add_negabinary;
 mod num_tile_possibilities;
+mod store_water;
 
 pub struct Solution {}
 
