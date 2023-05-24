@@ -102,6 +102,7 @@ mod add_negabinary;
 mod num_tile_possibilities;
 mod store_water;
 mod largest_vals_from_labels;
+mod frog_position;
 
 pub struct Solution {}
 
