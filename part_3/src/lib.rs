@@ -104,6 +104,7 @@ mod store_water;
 mod largest_vals_from_labels;
 mod frog_position;
 mod odd_string;
+mod shortest_path_binary_matrix;
 
 pub struct Solution {}
 
