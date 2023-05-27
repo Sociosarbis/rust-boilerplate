@@ -105,6 +105,7 @@ mod largest_vals_from_labels;
 mod frog_position;
 mod odd_string;
 mod shortest_path_binary_matrix;
+mod sample_stats;
 
 pub struct Solution {}
 
