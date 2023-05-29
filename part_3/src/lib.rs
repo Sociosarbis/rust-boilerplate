@@ -107,6 +107,7 @@ mod odd_string;
 mod shortest_path_binary_matrix;
 mod sample_stats;
 mod kth_smallest;
+mod average_value;
 
 pub struct Solution {}
 
