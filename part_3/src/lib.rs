@@ -108,6 +108,7 @@ mod shortest_path_binary_matrix;
 mod sample_stats;
 mod kth_smallest;
 mod average_value;
+mod mct_from_leaf_values;
 
 pub struct Solution {}
 
