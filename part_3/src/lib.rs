@@ -109,6 +109,7 @@ mod sample_stats;
 mod kth_smallest;
 mod average_value;
 mod mct_from_leaf_values;
+mod maximum_tastiness;
 
 pub struct Solution {}
 
