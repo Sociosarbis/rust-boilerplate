@@ -112,6 +112,7 @@ mod mct_from_leaf_values;
 mod maximum_tastiness;
 mod vowel_strings;
 mod max_rep_opt1;
+mod distinct_averages;
 
 pub struct Solution {}
 
