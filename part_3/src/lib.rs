@@ -113,6 +113,7 @@ mod maximum_tastiness;
 mod vowel_strings;
 mod max_rep_opt1;
 mod distinct_averages;
+mod apply_operations;
 
 pub struct Solution {}
 
