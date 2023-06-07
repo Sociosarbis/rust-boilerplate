@@ -115,6 +115,7 @@ mod max_rep_opt1;
 mod distinct_averages;
 mod apply_operations;
 mod equal_pairs;
+mod mice_and_cheese;
 
 pub struct Solution {}
 
