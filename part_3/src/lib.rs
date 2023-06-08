@@ -116,6 +116,7 @@ mod distinct_averages;
 mod apply_operations;
 mod equal_pairs;
 mod mice_and_cheese;
+mod tiling_rectangle;
 
 pub struct Solution {}
 
