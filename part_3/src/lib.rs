@@ -117,6 +117,7 @@ mod apply_operations;
 mod equal_pairs;
 mod mice_and_cheese;
 mod tiling_rectangle;
+mod modified_graph_edges;
 
 pub struct Solution {}
 
