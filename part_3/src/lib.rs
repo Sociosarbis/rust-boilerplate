@@ -119,6 +119,7 @@ mod mice_and_cheese;
 mod tiling_rectangle;
 mod modified_graph_edges;
 mod num_smaller_by_frequency;
+mod closed_island;
 
 pub struct Solution {}
 
