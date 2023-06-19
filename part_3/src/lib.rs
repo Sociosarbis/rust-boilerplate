@@ -120,6 +120,7 @@ mod tiling_rectangle;
 mod modified_graph_edges;
 mod num_smaller_by_frequency;
 mod closed_island;
+mod max_sum_div_three;
 
 pub struct Solution {}
 
