@@ -122,6 +122,7 @@ mod num_smaller_by_frequency;
 mod closed_island;
 mod max_sum_div_three;
 mod connect_two_groups;
+mod flip_chess;
 
 pub struct Solution {}
 
