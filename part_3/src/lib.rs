@@ -123,6 +123,7 @@ mod closed_island;
 mod max_sum_div_three;
 mod connect_two_groups;
 mod flip_chess;
+mod pond_sizes;
 
 pub struct Solution {}
 
