@@ -125,6 +125,7 @@ mod connect_two_groups;
 mod flip_chess;
 mod pond_sizes;
 mod maximum_value;
+mod get_max_grid_happiness;
 
 pub struct Solution {}
 
