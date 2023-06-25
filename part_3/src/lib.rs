@@ -127,6 +127,7 @@ mod pond_sizes;
 mod maximum_value;
 mod get_max_grid_happiness;
 mod check_overlap;
+mod pivot_integer;
 
 pub struct Solution {}
 
