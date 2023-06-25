@@ -126,6 +126,7 @@ mod flip_chess;
 mod pond_sizes;
 mod maximum_value;
 mod get_max_grid_happiness;
+mod check_overlap;
 
 pub struct Solution {}
 
