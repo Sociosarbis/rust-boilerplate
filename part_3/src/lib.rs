@@ -129,6 +129,7 @@ mod get_max_grid_happiness;
 mod check_overlap;
 mod pivot_integer;
 mod maximum_sum;
+mod minimum_incompatibility;
 
 pub struct Solution {}
 
