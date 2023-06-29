@@ -130,6 +130,7 @@ mod check_overlap;
 mod pivot_integer;
 mod maximum_sum;
 mod minimum_incompatibility;
+mod reconstruct_matrix;
 
 pub struct Solution {}
 
