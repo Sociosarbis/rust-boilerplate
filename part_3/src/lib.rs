@@ -131,6 +131,7 @@ mod pivot_integer;
 mod maximum_sum;
 mod minimum_incompatibility;
 mod reconstruct_matrix;
+mod is_circular_sentence;
 
 pub struct Solution {}
 
