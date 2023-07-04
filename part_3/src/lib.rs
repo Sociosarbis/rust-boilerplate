@@ -132,6 +132,7 @@ mod maximum_sum;
 mod minimum_incompatibility;
 mod reconstruct_matrix;
 mod is_circular_sentence;
+mod matrix_sum;
 
 pub struct Solution {}
 
