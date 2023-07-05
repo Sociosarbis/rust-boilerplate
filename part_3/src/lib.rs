@@ -134,6 +134,7 @@ mod reconstruct_matrix;
 mod is_circular_sentence;
 mod matrix_sum;
 mod k_items_with_maximum_sum;
+mod maximum_even_split;
 
 pub struct Solution {}
 
