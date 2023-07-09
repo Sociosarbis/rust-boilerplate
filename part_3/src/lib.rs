@@ -137,6 +137,7 @@ mod k_items_with_maximum_sum;
 mod maximum_even_split;
 mod find_crossing_time;
 mod two_sum;
+mod three_sum;
 
 pub struct Solution {}
 
