@@ -138,6 +138,7 @@ mod maximum_even_split;
 mod find_crossing_time;
 mod two_sum;
 mod three_sum;
+mod three_sum_closest;
 
 pub struct Solution {}
 
