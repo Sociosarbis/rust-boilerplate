@@ -139,6 +139,7 @@ mod find_crossing_time;
 mod two_sum;
 mod three_sum;
 mod three_sum_closest;
+mod max_alternating_sum;
 
 pub struct Solution {}
 
