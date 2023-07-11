@@ -140,6 +140,7 @@ mod two_sum;
 mod three_sum;
 mod three_sum_closest;
 mod max_alternating_sum;
+mod alternate_digit_sum;
 
 pub struct Solution {}
 
