@@ -143,6 +143,7 @@ mod max_alternating_sum;
 mod alternate_digit_sum;
 mod min_falling_path_sum;
 mod four_sum;
+mod min_interval;
 
 pub struct Solution {}
 
