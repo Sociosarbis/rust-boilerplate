@@ -144,6 +144,7 @@ mod alternate_digit_sum;
 mod min_falling_path_sum;
 mod four_sum;
 mod min_interval;
+mod robot_sim;
 
 pub struct Solution {}
 
