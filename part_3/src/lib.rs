@@ -145,6 +145,7 @@ mod min_falling_path_sum;
 mod four_sum;
 mod min_interval;
 mod robot_sim;
+mod max_subarray_sum_circular;
 
 pub struct Solution {}
 
