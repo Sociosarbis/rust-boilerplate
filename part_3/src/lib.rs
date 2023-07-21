@@ -146,6 +146,7 @@ mod four_sum;
 mod min_interval;
 mod robot_sim;
 mod max_subarray_sum_circular;
+mod find_max_value_of_equation;
 
 pub struct Solution {}
 
