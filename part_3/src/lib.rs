@@ -149,6 +149,7 @@ mod max_subarray_sum_circular;
 mod find_max_value_of_equation;
 mod trap;
 mod num_jewels_in_stones;
+mod halve_array;
 
 pub struct Solution {}
 
