@@ -151,6 +151,7 @@ mod trap;
 mod num_jewels_in_stones;
 mod halve_array;
 mod delete_greatest_value;
+mod sum_of_power;
 
 pub struct Solution {}
 
