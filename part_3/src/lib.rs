@@ -154,6 +154,7 @@ mod delete_greatest_value;
 mod sum_of_power;
 mod flipgame;
 mod remove_comment;
+mod unique_paths_iii;
 
 pub struct Solution {}
 
