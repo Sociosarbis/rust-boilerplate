@@ -155,6 +155,7 @@ mod sum_of_power;
 mod flipgame;
 mod remove_comment;
 mod unique_paths_iii;
+mod max_absolute_sum;
 
 pub struct Solution {}
 
