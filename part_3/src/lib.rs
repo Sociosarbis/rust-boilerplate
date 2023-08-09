@@ -156,6 +156,7 @@ mod flipgame;
 mod remove_comment;
 mod unique_paths_iii;
 mod max_absolute_sum;
+mod subtract_product_and_sum;
 
 pub struct Solution {}
 
