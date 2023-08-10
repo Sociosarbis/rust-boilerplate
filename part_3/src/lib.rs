@@ -157,6 +157,7 @@ mod remove_comment;
 mod unique_paths_iii;
 mod max_absolute_sum;
 mod subtract_product_and_sum;
+mod min_falling_path_sum_ii;
 
 pub struct Solution {}
 
