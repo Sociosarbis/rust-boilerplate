@@ -159,6 +159,7 @@ mod max_absolute_sum;
 mod subtract_product_and_sum;
 mod min_falling_path_sum_ii;
 mod diagonal_sum;
+mod find_replace_string;
 
 pub struct Solution {}
 
