@@ -160,6 +160,7 @@ mod subtract_product_and_sum;
 mod min_falling_path_sum_ii;
 mod diagonal_sum;
 mod find_replace_string;
+mod circular_game_losers;
 
 pub struct Solution {}
 
