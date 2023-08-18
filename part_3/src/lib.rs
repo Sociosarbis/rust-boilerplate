@@ -162,6 +162,7 @@ mod diagonal_sum;
 mod find_replace_string;
 mod circular_game_losers;
 mod ways;
+mod max_size_slices;
 
 pub struct Solution {}
 
