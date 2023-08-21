@@ -163,6 +163,7 @@ mod find_replace_string;
 mod circular_game_losers;
 mod ways;
 mod max_size_slices;
+mod can_change;
 
 pub struct Solution {}
 
