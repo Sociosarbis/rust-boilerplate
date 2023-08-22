@@ -164,6 +164,7 @@ mod circular_game_losers;
 mod ways;
 mod max_size_slices;
 mod can_change;
+mod max_dist_to_closest;
 
 pub struct Solution {}
 
