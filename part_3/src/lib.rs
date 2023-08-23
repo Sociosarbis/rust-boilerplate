@@ -165,6 +165,7 @@ mod ways;
 mod max_size_slices;
 mod can_change;
 mod max_dist_to_closest;
+mod count_pairs;
 
 pub struct Solution {}
 
