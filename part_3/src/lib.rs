@@ -166,6 +166,7 @@ mod max_size_slices;
 mod can_change;
 mod max_dist_to_closest;
 mod count_pairs;
+mod count_servers;
 
 pub struct Solution {}
 
