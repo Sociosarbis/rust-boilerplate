@@ -168,6 +168,7 @@ mod max_dist_to_closest;
 mod count_pairs;
 mod count_servers;
 mod merge;
+mod num_factored_binary_trees;
 
 pub struct Solution {}
 
