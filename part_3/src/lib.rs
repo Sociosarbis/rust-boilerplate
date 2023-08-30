@@ -169,6 +169,7 @@ mod count_pairs;
 mod count_servers;
 mod merge;
 mod num_factored_binary_trees;
+mod minimum_jumps;
 
 pub struct Solution {}
 
