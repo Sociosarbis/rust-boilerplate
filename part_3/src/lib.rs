@@ -170,6 +170,7 @@ mod count_servers;
 mod merge;
 mod num_factored_binary_trees;
 mod minimum_jumps;
+mod min_trio_degree;
 
 pub struct Solution {}
 
