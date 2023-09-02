@@ -172,6 +172,7 @@ mod num_factored_binary_trees;
 mod minimum_jumps;
 mod min_trio_degree;
 mod ways_to_buy_pens_pencils;
+mod capture_forts;
 
 pub struct Solution {}
 
