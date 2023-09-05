@@ -174,6 +174,7 @@ mod min_trio_degree;
 mod ways_to_buy_pens_pencils;
 mod capture_forts;
 mod eliminate_maximum;
+mod min_number;
 
 pub struct Solution {}
 
