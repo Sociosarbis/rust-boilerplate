@@ -176,6 +176,7 @@ mod capture_forts;
 mod eliminate_maximum;
 mod min_number;
 mod repair_cars;
+mod find_delayed_arrival_time;
 
 pub struct Solution {}
 
