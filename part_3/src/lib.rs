@@ -178,6 +178,7 @@ mod min_number;
 mod repair_cars;
 mod find_delayed_arrival_time;
 mod can_finish;
+mod find_order;
 
 pub struct Solution {}
 
