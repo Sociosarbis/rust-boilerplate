@@ -181,6 +181,7 @@ mod can_finish;
 mod find_order;
 mod check_if_prerequisite;
 mod check_valid_grid;
+mod queens_attackthe_king;
 
 pub struct Solution {}
 
