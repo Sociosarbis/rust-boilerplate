@@ -182,6 +182,7 @@ mod find_order;
 mod check_if_prerequisite;
 mod check_valid_grid;
 mod queens_attackthe_king;
+mod give_gem;
 
 pub struct Solution {}
 
