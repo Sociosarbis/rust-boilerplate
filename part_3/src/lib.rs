@@ -185,6 +185,7 @@ mod queens_attackthe_king;
 mod give_gem;
 mod rob;
 mod min_capability;
+mod min_count;
 
 pub struct Solution {}
 
