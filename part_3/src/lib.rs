@@ -187,6 +187,7 @@ mod rob;
 mod min_capability;
 mod min_count;
 mod collect_the_coins;
+mod dist_money;
 
 pub struct Solution {}
 
