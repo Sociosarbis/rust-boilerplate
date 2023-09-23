@@ -188,6 +188,7 @@ mod min_capability;
 mod min_count;
 mod collect_the_coins;
 mod dist_money;
+mod locking_tree;
 
 pub struct Solution {}
 
