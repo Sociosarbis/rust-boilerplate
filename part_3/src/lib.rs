@@ -190,6 +190,7 @@ mod collect_the_coins;
 mod dist_money;
 mod locking_tree;
 mod lru_cache;
+mod pass_the_pillow;
 
 pub struct Solution {}
 
