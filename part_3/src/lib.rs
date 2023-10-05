@@ -195,6 +195,7 @@ mod filter_restaurants;
 mod full_bloom_flowers;
 mod earliest_full_bloom;
 mod max_profit;
+mod max_profit_2;
 
 pub struct Solution {}
 
