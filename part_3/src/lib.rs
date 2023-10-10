@@ -197,6 +197,7 @@ mod earliest_full_bloom;
 mod max_profit;
 mod max_profit_2;
 mod split_num;
+mod sum_distance;
 
 pub struct Solution {}
 
