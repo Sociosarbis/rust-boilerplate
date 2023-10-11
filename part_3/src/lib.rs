@@ -198,6 +198,7 @@ mod max_profit;
 mod max_profit_2;
 mod split_num;
 mod sum_distance;
+mod top_students;
 
 pub struct Solution {}
 
