@@ -200,6 +200,7 @@ mod split_num;
 mod sum_distance;
 mod top_students;
 mod find_the_array_conc_val;
+mod avoid_flood;
 
 pub struct Solution {}
 
