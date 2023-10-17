@@ -202,6 +202,7 @@ mod top_students;
 mod find_the_array_conc_val;
 mod avoid_flood;
 mod single_number;
+mod sum_of_multiples;
 
 pub struct Solution {}
 
