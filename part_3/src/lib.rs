@@ -203,6 +203,7 @@ mod find_the_array_conc_val;
 mod avoid_flood;
 mod single_number;
 mod sum_of_multiples;
+mod max_kelements;
 
 pub struct Solution {}
 
