@@ -204,6 +204,7 @@ mod avoid_flood;
 mod single_number;
 mod sum_of_multiples;
 mod max_kelements;
+mod tuple_same_product;
 
 pub struct Solution {}
 
