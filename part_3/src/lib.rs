@@ -205,6 +205,7 @@ mod single_number;
 mod sum_of_multiples;
 mod max_kelements;
 mod tuple_same_product;
+mod categorize_box;
 
 pub struct Solution {}
 
