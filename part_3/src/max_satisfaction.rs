@@ -3,39 +3,11 @@ use super::*;
 impl Solution {
   pub fn max_satisfaction(mut satisfaction: Vec<i32>) -> i32 {
     satisfaction.sort_unstable();
-    let mut l = 0;
-    let mut r = satisfaction.len() - 1;
-    while l <= r {
-      let mid = (l + r) >> 1;
-      if satisfaction[mid] > 0 {
-        if mid > 0 && satisfaction[mid - 1] > 0 {
-          r = mid - 1;
-        } else {
-          l = mid;
-          break;
-        }
-      } else {
-        l = mid + 1;
-      }
-    }
-    let mut positive_sum = 0;
-    for i in l..satisfaction.len() {
-      positive_sum += satisfaction[i];
-    }
-    r = l.min(satisfaction.len() - 1);
-    l = 0;
-    while l <= r {
-      let mid = (l + r) >> 1;
-      if satisfaction[mid] > -positive_sum {
-        if mid > 0 && satisfaction[mid - 1] > -positive_sum {
-          r = mid - 1;
-        } else {
-          l = mid;
-          break;
-        }
-      } else {
-        l = mid + 1;
-      }
+    let mut l = satisfaction.len();
+    let mut ret = 0;
+    while l > 0 && satisfaction[l - 1] + ret > 0 {
+      l -= 1;
+      ret += satisfaction[l];
     }
     satisfaction
       .into_iter()
@@ -65,6 +37,10 @@ mod tests {
         satisfaction: vec![4, 3, 2],
         ret: 20,
       },
+      Suite {
+        satisfaction: vec![-5,-7,8,-2,1,3,9,5,-10,4,-5,-2,-1,-6],
+        ret: 260
+      }
     ];
 
     for s in suites {
