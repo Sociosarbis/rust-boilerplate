@@ -207,6 +207,8 @@ mod max_kelements;
 mod tuple_same_product;
 mod categorize_box;
 mod count_pairs_2;
+mod max_satisfaction;
+mod count_seniors;
 
 pub struct Solution {}
 
