@@ -210,6 +210,7 @@ mod count_pairs_2;
 mod max_satisfaction;
 mod count_seniors;
 mod num_rolls_to_target;
+mod punishment_number;
 
 pub struct Solution {}
 
