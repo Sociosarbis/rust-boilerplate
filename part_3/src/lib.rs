@@ -212,6 +212,7 @@ mod count_seniors;
 mod num_rolls_to_target;
 mod punishment_number;
 mod count_digits;
+mod max_area;
 
 pub struct Solution {}
 
