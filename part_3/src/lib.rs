@@ -214,6 +214,7 @@ mod punishment_number;
 mod count_digits;
 mod max_area;
 mod pick_gifts;
+mod smallest_missing_value_subtree;
 
 pub struct Solution {}
 
