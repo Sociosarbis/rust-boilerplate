@@ -216,6 +216,7 @@ mod max_area;
 mod pick_gifts;
 mod smallest_missing_value_subtree;
 mod maximum_invitations;
+mod count_points;
 
 pub struct Solution {}
 
