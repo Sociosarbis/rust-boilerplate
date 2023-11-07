@@ -217,6 +217,7 @@ mod pick_gifts;
 mod smallest_missing_value_subtree;
 mod maximum_invitations;
 mod count_points;
+mod vowel_strings_2;
 
 pub struct Solution {}
 
