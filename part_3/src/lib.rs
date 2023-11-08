@@ -218,6 +218,7 @@ mod smallest_missing_value_subtree;
 mod maximum_invitations;
 mod count_points;
 mod vowel_strings_2;
+mod find_the_longest_balanced_substring;
 
 pub struct Solution {}
 
