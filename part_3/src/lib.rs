@@ -220,6 +220,7 @@ mod count_points;
 mod vowel_strings_2;
 mod find_the_longest_balanced_substring;
 mod maximum_minutes;
+mod successful_pairs;
 
 pub struct Solution {}
 
