@@ -222,6 +222,7 @@ mod find_the_longest_balanced_substring;
 mod maximum_minutes;
 mod successful_pairs;
 mod find_the_city;
+mod maximize_sum;
 
 pub struct Solution {}
 
