@@ -223,6 +223,7 @@ mod maximum_minutes;
 mod successful_pairs;
 mod find_the_city;
 mod maximize_sum;
+mod longest_alternating_subarray;
 
 pub struct Solution {}
 
