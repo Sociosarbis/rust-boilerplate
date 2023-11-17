@@ -224,6 +224,7 @@ mod successful_pairs;
 mod find_the_city;
 mod maximize_sum;
 mod longest_alternating_subarray;
+mod maximum_sum_queries;
 
 pub struct Solution {}
 
