@@ -225,6 +225,7 @@ mod find_the_city;
 mod maximize_sum;
 mod longest_alternating_subarray;
 mod maximum_sum_queries;
+mod maximum_sum_2;
 
 pub struct Solution {}
 
