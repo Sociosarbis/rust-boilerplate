@@ -228,6 +228,7 @@ mod maximum_sum_queries;
 mod maximum_sum_2;
 mod max_sub_array;
 mod min_deletion;
+mod min_path_cost;
 
 pub struct Solution {}
 
