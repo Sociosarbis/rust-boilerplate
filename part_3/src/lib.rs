@@ -229,6 +229,7 @@ mod maximum_sum_2;
 mod max_sub_array;
 mod min_deletion;
 mod min_path_cost;
+mod entity_parser;
 
 pub struct Solution {}
 
