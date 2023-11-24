@@ -230,6 +230,7 @@ mod max_sub_array;
 mod min_deletion;
 mod min_path_cost;
 mod entity_parser;
+mod count_pairs_3;
 
 pub struct Solution {}
 
