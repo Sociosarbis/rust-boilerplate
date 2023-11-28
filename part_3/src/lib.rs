@@ -231,6 +231,7 @@ mod min_deletion;
 mod min_path_cost;
 mod entity_parser;
 mod count_pairs_3;
+mod front_middle_back_queue;
 
 pub struct Solution {}
 
