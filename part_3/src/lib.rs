@@ -233,6 +233,7 @@ mod entity_parser;
 mod count_pairs_3;
 mod front_middle_back_queue;
 mod smallest_infinite_set;
+mod close_strings;
 
 pub struct Solution {}
 
