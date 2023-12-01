@@ -234,6 +234,7 @@ mod count_pairs_3;
 mod front_middle_back_queue;
 mod smallest_infinite_set;
 mod close_strings;
+mod first_complete_index;
 
 pub struct Solution {}
 
