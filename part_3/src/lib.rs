@@ -235,6 +235,7 @@ mod front_middle_back_queue;
 mod smallest_infinite_set;
 mod close_strings;
 mod first_complete_index;
+mod car_pooling;
 
 pub struct Solution {}
 
