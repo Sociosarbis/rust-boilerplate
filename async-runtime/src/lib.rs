@@ -30,12 +30,12 @@ async fn read<R: ?Sized + AsRawFd + Read>(
   buf: &mut [u8],
 ) -> std::io::Result<usize> {
   let flag: (Cell<bool>, Cell<Option<Waker>>) = (Cell::new(false), Cell::new(None));
-  let mut handle = poll.listen_read(reader, &flag)?;
+  let mut handle = std::pin::pin!(poll.listen_read(reader, &flag)?);
   loop {
     match reader.read(buf) {
       Ok(x) => return Ok(x),
       Err(ref e) if matches!(e.kind(), ErrorKind::WouldBlock | ErrorKind::Interrupted) => {
-        handle.wait().await;
+        handle.as_mut().await;
       }
       Err(e) => return Err(e),
     }
@@ -48,12 +48,12 @@ async fn write<W: ?Sized + AsRawFd + Write>(
   buf: &[u8],
 ) -> std::io::Result<usize> {
   let flag: (Cell<bool>, Cell<Option<Waker>>) = (Cell::new(false), Cell::new(None));
-  let mut handle = poll.listen_write(writer, &flag)?;
+  let mut handle = std::pin::pin!(poll.listen_write(writer, &flag)?);
   loop {
     match writer.write(buf) {
       Ok(x) => return Ok(x),
       Err(ref e) if matches!(e.kind(), ErrorKind::WouldBlock | ErrorKind::Interrupted) => {
-        handle.wait().await;
+        handle.as_mut().await;
       }
       Err(e) => return Err(e),
     }
@@ -89,9 +89,9 @@ pub async fn sleep(dur: Duration) {
   let timer = Timer::new_timeout(dur).unwrap();
   let recv = (Cell::new(false), Cell::new(None));
   let runner = runner();
-  let mut handle = runner.epoll.listen_read(&timer, &recv).unwrap();
+  let mut handle = std::pin::pin!(runner.epoll.listen_read(&timer, &recv).unwrap());
   while timer.ticks().unwrap() == 0 {
-    handle.wait().await;
+    handle.as_mut().await;
   }
 }
 

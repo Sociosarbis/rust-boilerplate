@@ -1,12 +1,10 @@
 use std::{
   cell::Cell,
-  future::poll_fn,
+  future::Future,
   task::{Context, Waker},
 };
 
 use crate::epoll::Epoll;
-
-
 
 pub struct PollEvent<'a, 'b> {
   fd: libc::c_int,
@@ -22,12 +20,12 @@ impl<'a, 'b> PollEvent<'a, 'b> {
   ) -> Self {
     Self { fd, recv, poll }
   }
+}
 
-  pub async fn wait(&mut self) {
-    poll_fn(|cx| self.poll_wait(cx)).await
-  }
+impl<'a, 'b> Future for PollEvent<'a, 'b> {
+  type Output = ();
 
-  fn poll_wait(&mut self, cx: &mut Context<'_>) -> std::task::Poll<()> {
+  fn poll(self: std::pin::Pin<&mut Self>, cx: &mut Context<'_>) -> std::task::Poll<Self::Output> {
     if self.recv.0.replace(false) {
       std::task::Poll::Ready(())
     } else {

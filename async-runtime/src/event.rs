@@ -17,7 +17,7 @@ impl Event {
     let value = 1u64;
     unsafe {
       err_handle(
-        libc::write(self.0.as_raw_fd(), std::ptr::addr_of!(value).cast(), 8) as libc::c_int,
+        libc::write(self.0.as_raw_fd(), std::ptr::addr_of!(value).cast(), 8) as _,
       )?;
     }
     Ok(())
@@ -31,7 +31,7 @@ impl Event {
     let mut buf = 0u64;
     unsafe {
       match err_handle(
-        libc::read(self.0.as_raw_fd(), std::ptr::addr_of_mut!(buf).cast(), 8) as libc::c_int,
+        libc::read(self.0.as_raw_fd(), std::ptr::addr_of_mut!(buf).cast(), 8) as _,
       ) {
         Ok(_) => Ok(true),
         Err(ref e) if matches!(e.kind(), ErrorKind::WouldBlock | ErrorKind::Interrupted) => {
@@ -65,28 +65,28 @@ impl AsRawFd for Event {
 static VTABLE: RawWakerVTable = RawWakerVTable::new(clone, wake, wake_by_ref, drop);
 
 unsafe fn clone(data: *const ()) -> RawWaker {
-  let signal = ManuallyDrop::new(Event::from_raw_fd(data as libc::c_int));
+  let signal = /* 避免源fd drop */ ManuallyDrop::new(Event::from_raw_fd(data as _));
   let new_signal = signal.try_clone().unwrap();
   raw_waker(new_signal)
 }
 
 unsafe fn wake(data: *const ()) {
-  let signal = ManuallyDrop::new(Event::from_raw_fd(data as libc::c_int));
+  let signal = ManuallyDrop::new(Event::from_raw_fd(data as _));
   signal.notify().unwrap();
 }
 
 unsafe fn wake_by_ref(data: *const ()) {
-  let signal = ManuallyDrop::new(Event::from_raw_fd(data as libc::c_int));
+  let signal = ManuallyDrop::new(Event::from_raw_fd(data as _));
   signal.notify().unwrap();
 }
 
 unsafe fn drop(data: *const ()) {
-  std::mem::drop(Event::from_raw_fd(data as libc::c_int));
+  std::mem::drop(Event::from_raw_fd(data as _));
 }
 
 fn raw_waker(signal: Event) -> RawWaker {
   let signal = signal.into_raw_fd();
-  RawWaker::new(signal as *const (), &VTABLE)
+  RawWaker::new(signal as *const _, &VTABLE)
 }
 
 pub fn waker(signal: Event) -> Waker {

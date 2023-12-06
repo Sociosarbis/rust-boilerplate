@@ -59,9 +59,11 @@ impl Timer {
     loop {
       unsafe {
         let mut tmp = 0u64;
-        match err_handle(libc::read(self.0.as_raw_fd(), addr_of_mut!(tmp).cast(), 8) as libc::c_int)
+        match err_handle(libc::read(self.0.as_raw_fd(), addr_of_mut!(tmp).cast(), 8) as _)
         {
-          Ok(_) => return Ok(tmp),
+          Ok(_) => {
+            return Ok(tmp);
+          },
           Err(ref e) if e.kind() == ErrorKind::WouldBlock => {
             return Ok(0);
           }

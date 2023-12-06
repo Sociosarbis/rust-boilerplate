@@ -28,7 +28,7 @@ impl Epoll {
     fd: &T,
     recv: &'b (Cell<bool>, Cell<Option<Waker>>),
   ) -> std::io::Result<PollEvent<'a, 'b>> {
-    self.listen(fd, recv, libc::EPOLLIN as u32)
+    self.listen(fd, recv, libc::EPOLLIN as _)
   }
 
   pub fn listen_write<'a, 'b, T: ?Sized + AsRawFd>(
@@ -36,7 +36,7 @@ impl Epoll {
     fd: &T,
     recv: &'b (Cell<bool>, Cell<Option<Waker>>),
   ) -> std::io::Result<PollEvent<'a, 'b>> {
-    self.listen(fd, recv, libc::EPOLLOUT as u32)
+    self.listen(fd, recv, libc::EPOLLOUT as _)
   }
 
   fn listen<'a, 'b, T: ?Sized + AsRawFd>(
@@ -50,7 +50,7 @@ impl Epoll {
       events: events | libc::EPOLLET as u32,
       u64: unsafe {
         epoll_data {
-          ptr: recv as *const _ as *mut libc::c_void,
+          ptr: recv as *const _ as _,
         }
         .u64
       },
@@ -94,6 +94,7 @@ impl Epoll {
     })
   }
 
+  /** 接收事件后就会解除block */
   pub fn wait(&self) -> std::io::Result<()> {
     let size = self.size.get();
     let sink = unsafe { &mut *self.sink.get() };
@@ -103,7 +104,7 @@ impl Epoll {
         match err_handle(libc::epoll_wait(
           self.fd.as_raw_fd(),
           sink.as_mut_ptr(),
-          size as i32,
+          size as _,
           -1,
         )) {
           Ok(x) => break x,
@@ -115,7 +116,7 @@ impl Epoll {
       }
     };
 
-    unsafe { sink.set_len(res as usize) };
+    unsafe { sink.set_len(res as _) };
 
     for evt in sink.drain(..) {
       let data: &(Cell<bool>, Cell<Option<Waker>>) =
