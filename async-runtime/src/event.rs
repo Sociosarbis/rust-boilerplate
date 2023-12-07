@@ -67,6 +67,7 @@ static VTABLE: RawWakerVTable = RawWakerVTable::new(clone, wake, wake_by_ref, dr
 unsafe fn clone(data: *const ()) -> RawWaker {
   let signal = /* 避免源fd drop */ ManuallyDrop::new(Event::from_raw_fd(data as _));
   let new_signal = signal.try_clone().unwrap();
+  println!("clone");
   raw_waker(new_signal)
 }
 

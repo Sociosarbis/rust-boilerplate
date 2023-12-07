@@ -87,12 +87,8 @@ pub(crate) fn with_runner<F: FnOnce(&Runner) -> T, T>(f: F) -> T {
 
 pub async fn sleep(dur: Duration) {
   let timer = Timer::new_timeout(dur).unwrap();
-  let recv = (Cell::new(false), Cell::new(None));
-  let runner = runner();
-  let mut handle = std::pin::pin!(runner.epoll.listen_read(&timer, &recv).unwrap());
-  while timer.ticks().unwrap() == 0 {
-    handle.as_mut().await;
-  }
+  println!("timer");
+  timer.await;
 }
 
 #[test]
