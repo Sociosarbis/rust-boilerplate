@@ -88,7 +88,9 @@ fn raw_waker(signal: Event) -> RawWaker {
   let signal = signal.into_raw_fd();
   RawWaker::new(signal as *const _, &VTABLE)
 }
-
+// 在async-std中waker传入的是整个RawTask的指针，而RawTask包含future的指针
+// 这样在wake的时候，通过ptr转换回RawTask，然后就可以访问到future，并重新poll
+// 可以通过Pin::new_unchecked将future指针转回Pin<Future>
 pub fn waker(signal: Event) -> Waker {
   unsafe { Waker::from_raw(raw_waker(signal)) }
 }
