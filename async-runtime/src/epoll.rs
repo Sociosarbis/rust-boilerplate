@@ -99,7 +99,6 @@ impl Epoll {
     let size = self.size.get();
     let sink = unsafe { &mut *self.sink.get() };
     sink.reserve(1);
-    println!("fd:{:?}", self.fd.as_raw_fd());
     let res = unsafe {
       loop {
         match err_handle(libc::epoll_wait(
@@ -111,7 +110,6 @@ impl Epoll {
           Ok(x) => break x,
           Err(ref e) if e.kind() == ErrorKind::Interrupted => continue,
           Err(e) => {
-            println!("wait error");
             return Err(e);
           }
         }

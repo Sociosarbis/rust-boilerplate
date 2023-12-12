@@ -18,7 +18,7 @@ impl Runner {
 
     let event = Event::new()?;
     let recv = (Cell::new(false), Cell::new(None));
-    let _ = self.epoll.listen_read(&event, &recv)?;
+    let _handle = self.epoll.listen_read(&event, &recv)?;
     let waker = waker(event.try_clone()?);
     let mut cx = Context::from_waker(&waker);
     loop {

@@ -87,7 +87,6 @@ pub(crate) fn with_runner<F: FnOnce(&Runner) -> T, T>(f: F) -> T {
 
 pub async fn sleep(dur: Duration) {
   let timer = Timer::new_timeout(dur).unwrap();
-  println!("timer");
   timer.await;
 }
 

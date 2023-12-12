@@ -10,7 +10,7 @@ use std::{
   time::Duration,
 };
 
-use crate::utils::err_handle;
+use crate::{utils::err_handle, with_runner};
 
 fn dur2timespec_saturating(delta: Duration) -> libc::timespec {
   libc::timespec {
@@ -55,7 +55,6 @@ impl Timer {
       },
       it_value: dur2timespec_saturating(delta),
     };
-    println!("{:?}", 123);
     unsafe {
       err_handle(libc::timerfd_settime(
         self.0.as_raw_fd(),
@@ -64,7 +63,6 @@ impl Timer {
         core::ptr::null_mut(),
       ))?;
     }
-    println!("234");
     Ok(())
   }
 
@@ -73,14 +71,11 @@ impl Timer {
     this.setup_timeout(until)?;
     let timer_cloned = Self(this.0.try_clone().unwrap(), this.1.clone());
     std::thread::spawn(move || {
-      println!("tick");
       while timer_cloned.ticks().unwrap() == 0 {}
-      println!("over");
       if let Ok(mut s) = timer_cloned.1.lock() {
         s.is_finished
           .store(true, std::sync::atomic::Ordering::Relaxed);
         if let Some(waker) = s.waker.take() {
-          println!("wake");
           waker.wake();
         }
       }
@@ -89,26 +84,23 @@ impl Timer {
   }
 
   pub fn ticks(&self) -> std::io::Result<u64> {
-    Ok(0)
-    // loop {
-    //   unsafe {
-    //     let mut tmp = 0u64;
-    //     match err_handle(libc::read(self.0.as_raw_fd(), addr_of_mut!(tmp).cast(), 8) as _) {
-    //       Ok(_) => {
-    //         println!("hello");
-    //         return Ok(tmp);
-    //       }
-    //       Err(ref e) if e.kind() == ErrorKind::WouldBlock => {
-    //         return Ok(0);
-    //       }
-    //       Err(ref e) if e.kind() == ErrorKind::Interrupted => continue,
-    //       Err(e) => {
-    //         println!("tick error");
-    //         return Err(e)
-    //       },
-    //     }
-    //   }
-    // }
+    loop {
+      unsafe {
+        let mut tmp = 0u64;
+        match err_handle(libc::read(self.0.as_raw_fd(), addr_of_mut!(tmp).cast(), 8) as _) {
+          Ok(_) => {
+            return Ok(tmp);
+          }
+          Err(ref e) if e.kind() == ErrorKind::WouldBlock => {
+            return Ok(0);
+          }
+          Err(ref e) if e.kind() == ErrorKind::Interrupted => continue,
+          Err(e) => {
+            return Err(e);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -119,14 +111,16 @@ impl Future for Timer {
     self: std::pin::Pin<&mut Self>,
     cx: &mut std::task::Context<'_>,
   ) -> std::task::Poll<Self::Output> {
-    println!("wait");
     let mut s = self.1.lock().unwrap();
     if s.is_finished.load(std::sync::atomic::Ordering::Relaxed) {
       std::task::Poll::Ready(0)
     } else {
-      println!("replace");
+      if let Some(ref w) = s.waker {
+        if w.will_wake(cx.waker()) {
+          return std::task::Poll::Pending;
+        }
+      }
       s.waker.replace(cx.waker().clone());
-      println!("clone over");
       std::task::Poll::Pending
     }
   }
