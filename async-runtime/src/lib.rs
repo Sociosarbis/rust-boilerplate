@@ -13,6 +13,7 @@ mod epoll;
 mod event;
 mod poll_event;
 mod runner;
+mod scope_guard;
 mod timer;
 mod utils;
 
@@ -86,7 +87,10 @@ pub(crate) fn with_runner<F: FnOnce(&Runner) -> T, T>(f: F) -> T {
 }
 
 pub async fn sleep(dur: Duration) {
-  let timer = Timer::new_timeout(dur).unwrap();
+  let (timer, handle) = Timer::new_timeout(dur).unwrap();
+  let _guard = scope_guard::ScopeGuard::new(handle, |h| {
+    let _ = h.join();
+  });
   timer.await;
 }
 

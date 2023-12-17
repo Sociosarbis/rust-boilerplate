@@ -7,10 +7,10 @@ use std::{
   ptr::addr_of_mut,
   sync::{atomic::AtomicBool, Arc, Mutex},
   task::Waker,
-  time::Duration,
+  time::Duration, thread::JoinHandle,
 };
 
-use crate::{utils::err_handle, with_runner};
+use crate::utils::err_handle;
 
 fn dur2timespec_saturating(delta: Duration) -> libc::timespec {
   libc::timespec {
@@ -66,11 +66,11 @@ impl Timer {
     Ok(())
   }
 
-  pub fn new_timeout(until: Duration) -> std::io::Result<Self> {
+  pub fn new_timeout(until: Duration) -> std::io::Result<(Self, JoinHandle<()>)> {
     let mut this = Self::new_(libc::CLOCK_MONOTONIC)?;
     this.setup_timeout(until)?;
     let timer_cloned = Self(this.0.try_clone().unwrap(), this.1.clone());
-    std::thread::spawn(move || {
+    let handle = std::thread::spawn(move || {
       while timer_cloned.ticks().unwrap() == 0 {}
       if let Ok(mut s) = timer_cloned.1.lock() {
         s.is_finished
@@ -80,7 +80,7 @@ impl Timer {
         }
       }
     });
-    Ok(this)
+    Ok((this, handle))
   }
 
   pub fn ticks(&self) -> std::io::Result<u64> {
