@@ -5,6 +5,7 @@ use std::{
 
 use crate::utils::err_handle;
 
+#[derive(Debug)]
 pub struct Event(OwnedFd);
 
 impl Event {

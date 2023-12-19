@@ -1,10 +1,12 @@
 extern crate libc;
 use std::{
+  alloc::Layout,
   cell::{Cell, UnsafeCell},
   future::Future,
   io::{ErrorKind, Read, Write},
   ops::Deref,
   os::fd::AsRawFd,
+  ptr,
   task::Waker,
   time::Duration,
 };
@@ -18,6 +20,7 @@ mod timer;
 mod utils;
 
 use epoll::*;
+use event::Event;
 use runner::*;
 use timer::*;
 
@@ -101,4 +104,19 @@ fn test_block_on() {
     sleep(Duration::from_secs(1)).await;
     println!("World!");
   });
+}
+
+#[test]
+fn test_bump_alloc() {
+  let bump_layout = Layout::from_size_align(3, 64).unwrap();
+  let ptr = unsafe { std::alloc::alloc(bump_layout) };
+  unsafe { ptr::write(ptr, 1) };
+  let event_ptr = unsafe { ptr.add(1) as *mut event::Event };
+  unsafe { ptr::write(event_ptr, Event::new().unwrap()) };
+  let head_value = unsafe { ptr::read(ptr as *const _) };
+  println!("head_value:{:?}", head_value);
+  let event_value = unsafe {
+    ptr::read(ptr.add(1) as *const Event)
+  };
+  println!("event_value:{:?}", event_value);
 }
