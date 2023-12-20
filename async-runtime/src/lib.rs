@@ -115,8 +115,34 @@ fn test_bump_alloc() {
   unsafe { ptr::write(event_ptr, Event::new().unwrap()) };
   let head_value = unsafe { ptr::read(ptr as *const _) };
   println!("head_value:{:?}", head_value);
-  let event_value = unsafe {
-    ptr::read(ptr.add(1) as *const Event)
-  };
+  let event_value = unsafe { ptr::read(ptr.add(1) as *const Event) };
   println!("event_value:{:?}", event_value);
+
+  unsafe {
+    std::alloc::dealloc(ptr, bump_layout);
+  }
+}
+
+const MAX_SIZE: usize = core::mem::size_of::<String>();
+const LENGTH_MASK: u8 = 0b11000000;
+
+#[test]
+fn test_compact_str() {
+  println!("max_size:{:?}", MAX_SIZE);
+  let s = "abcdefghijklmnopqrstuvw";
+  let mut buffer = [0u8; MAX_SIZE];
+  // 即便字符串的长度等于24，由于utf-8字符的结束字节只会是0b10开头
+  // 所以能够判断最后一位是否覆盖
+  buffer[MAX_SIZE - 1] = s.len() as u8 | LENGTH_MASK;
+  unsafe {
+    ptr::copy_nonoverlapping(s.as_ptr(), buffer.as_mut_ptr(), s.len());
+  }
+  println!("buffer:{:?}", buffer);
+  let s = unsafe {
+    core::str::from_utf8_unchecked(core::slice::from_raw_parts(
+      &buffer as *const _,
+      buffer[MAX_SIZE - 1].wrapping_sub(LENGTH_MASK) as _,
+    ))
+  };
+  println!("come back:{:?}", s);
 }
