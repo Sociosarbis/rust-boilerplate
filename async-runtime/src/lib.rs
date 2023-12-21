@@ -125,6 +125,23 @@ fn test_bump_alloc() {
 
 const MAX_SIZE: usize = core::mem::size_of::<String>();
 const LENGTH_MASK: u8 = 0b11000000;
+const USIZE_SIZE: usize = core::mem::size_of::<usize>();
+const VALID_MASK: usize = {
+  let mut bytes = [255; USIZE_SIZE];
+  bytes[USIZE_SIZE - 1] = 0;
+  // 本机小端序
+  usize::from_ne_bytes(bytes)
+};
+const HEAP_MARKER: usize = {
+  let mut bytes = [0; USIZE_SIZE];
+  bytes[USIZE_SIZE - 1] = 216;
+  usize::from_ne_bytes(bytes)
+};
+const MAX_VALUE: usize = {
+  let mut bytes = [255; USIZE_SIZE];
+  bytes[USIZE_SIZE - 1] = 0;
+  usize::from_le_bytes(bytes) - 1
+};
 
 #[test]
 fn test_compact_str() {
@@ -145,4 +162,30 @@ fn test_compact_str() {
     ))
   };
   println!("come back:{:?}", s);
+}
+
+const UNKNOWN: usize = 0;
+type StrBuffer = [u8; UNKNOWN];
+
+#[repr(C)]
+struct HeapBufferInnerHeapCapacity {
+  capacity: usize,
+  buffer: StrBuffer,
+}
+
+pub fn layout(capacity: usize) -> std::alloc::Layout {
+  let buffer_layout = std::alloc::Layout::array::<u8>(capacity).expect("valid capacity");
+  std::alloc::Layout::new::<HeapBufferInnerHeapCapacity>()
+    .extend(buffer_layout)
+    .expect("valid layout")
+    .0
+    .pad_to_align()
+}
+
+#[test]
+fn test_compact_str_on_heap() {
+  println!("USIZE_SIZE:{:?}", USIZE_SIZE);
+  println!("VALID_MASK:{:?}", VALID_MASK);
+  println!("HEAP_MARKER:{:?}", HEAP_MARKER);
+  println!("layout:{:?}", layout(MAX_VALUE + 1));
 }
