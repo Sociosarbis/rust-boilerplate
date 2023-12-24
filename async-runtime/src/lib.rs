@@ -2,6 +2,7 @@ extern crate libc;
 use std::{
   alloc::Layout,
   cell::{Cell, UnsafeCell},
+  collections::TryReserveError,
   future::Future,
   io::{ErrorKind, Read, Write},
   ops::Deref,
@@ -143,6 +144,15 @@ const MAX_VALUE: usize = {
   usize::from_le_bytes(bytes) - 1
 };
 
+const MIN_HEAP_SIZE: usize = MAX_SIZE + USIZE_SIZE;
+
+unsafe fn do_alloc(layout: Layout) -> Option<ptr::NonNull<u8>> {
+  println!("{:?}", layout);
+  let raw_ptr = std::alloc::alloc(layout);
+  println!("{:?}", raw_ptr);
+  ptr::NonNull::new(raw_ptr)
+}
+
 #[test]
 fn test_compact_str() {
   println!("max_size:{:?}", MAX_SIZE);
@@ -184,8 +194,27 @@ pub fn layout(capacity: usize) -> std::alloc::Layout {
 
 #[test]
 fn test_compact_str_on_heap() {
+  // compact str的实现是通过最后一个byte
+  // 来判断是在stack还是在heap
+  // 当在heap时结构为ptr,len,cap
+  // 在64位系统中少一个byte的来表示cap的最大值还有2^(7*8)-2这么大
+  // 基本不会有需要用到这么长的字符串
+  // 而在32位中只有2^(3*8)-2，最后一个byte就显得挺有需要的了
+  // 所以这种情况下如果大于这个最大值，会选择把capacity存到heap中
+  // capacity的指针需要通过字符串指针减去4个bytes来获取（32位的情况）
   println!("USIZE_SIZE:{:?}", USIZE_SIZE);
   println!("VALID_MASK:{:?}", VALID_MASK);
   println!("HEAP_MARKER:{:?}", HEAP_MARKER);
-  println!("layout:{:?}", layout(MAX_VALUE + 1));
+  let capacity = (1 << 24) - 2;
+  let ptr = unsafe { do_alloc(layout(capacity)).unwrap() };
+  unsafe {
+    ptr::copy_nonoverlapping(capacity.to_ne_bytes().as_ptr(), ptr.as_ptr(), USIZE_SIZE);
+  }
+  let s = "abcdefghijklmnopqrstuvwxyz";
+  let raw_ptr = ptr.as_ptr().wrapping_add(USIZE_SIZE);
+  unsafe {
+    ptr::copy_nonoverlapping(s.as_ptr(), raw_ptr, s.len());
+  }
+  let s = unsafe { core::str::from_utf8_unchecked(core::slice::from_raw_parts(raw_ptr, s.len())) };
+  println!("come back:{:?}", s);
 }
