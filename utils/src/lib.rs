@@ -1,6 +1,7 @@
 use std::{io::{Read, Cursor, Bytes}, iter::Peekable};
 
 mod error;
+mod type_erase;
 
 #[macro_export]
 macro_rules! count_args {
