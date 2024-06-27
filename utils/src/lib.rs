@@ -1,6 +1,7 @@
 use std::{
   io::{Bytes, Cursor, Read},
   iter::Peekable,
+  sync::atomic::{AtomicU8, Ordering},
 };
 
 mod error;
@@ -136,4 +137,23 @@ fn merge(
   }
 
   head
+}
+
+struct InnerBusy {
+  signal: AtomicU8,
+  auto_reset: u8,
+}
+
+#[test]
+fn test_raw_to_atomic() {
+  let mut s: [u8; 2] = [0; 2];
+  let busy = unsafe {
+    (s.as_mut_slice().get_mut(0).unwrap() as *mut u8 as *mut InnerBusy)
+      .as_ref()
+      .unwrap()
+  };
+  let before = busy.signal.fetch_add(1, Ordering::Relaxed);
+  let after = busy.signal.load(Ordering::Relaxed);
+  println!("before:{:?}, after:{:?}", before, after);
+  println!("s:{:?}", s);
 }
