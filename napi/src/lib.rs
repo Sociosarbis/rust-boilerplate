@@ -5,6 +5,8 @@ use napi::{Env, JsNumber, JsObject, JsString, JsUndefined, NapiValue};
 #[macro_use]
 extern crate napi_derive;
 
+mod assign;
+
 fn result_to_option<T, E>(result: Result<T, E>) -> Option<T> {
   if let Ok(v) = result {
     Some(v)
