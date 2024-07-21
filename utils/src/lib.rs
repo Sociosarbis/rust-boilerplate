@@ -1,7 +1,5 @@
 use std::{
-  io::{Bytes, Cursor, Read},
-  iter::Peekable,
-  sync::atomic::{AtomicU8, Ordering},
+  io::{Bytes, Cursor, Read}, iter::Peekable, pin::Pin, sync::atomic::{AtomicU8, Ordering}
 };
 
 mod error;
@@ -156,4 +154,23 @@ fn test_raw_to_atomic() {
   let after = busy.signal.load(Ordering::Relaxed);
   println!("before:{:?}, after:{:?}", before, after);
   println!("s:{:?}", s);
+}
+
+#[test]
+fn test_pinned_box() {
+  let b_1 = Box::new(100u8);
+
+  let b1_addr = format!("{:p}", b_1.as_ref());
+
+  let p_b_1 = std::boxed::Box::into_pin(b_1);
+  // {:p} 占位符需要变量实现fmt::Pointer Trait
+  // b_1是在stack的变量，只不过它指向的是heap的变量
+  // heap的变量自身又有一个地址
+  let p_b_1_addr = format!("{:p}", p_b_1);
+
+  let b_2 = p_b_1;
+
+  let b_2_addr = format!("{:p}", b_2);
+
+  println!("{}:{}:{}", b1_addr, p_b_1_addr, b_2_addr);
 }
