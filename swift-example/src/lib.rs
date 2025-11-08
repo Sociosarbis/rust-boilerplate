@@ -13,19 +13,19 @@ type SetResult = extern "C" fn(ptr: *mut c_void, result: c_int);
 
 #[repr(C)]
 struct PluginImpl {
-  new: Create,
+  create: Create,
   set_result: SetResult,
 }
 
 #[unsafe(no_mangle)]
-pub extern "C" fn register_plugin_impl(new: Create, set_result: SetResult) {
-  PLUGIN_IMPL.get_or_init(|| PluginImpl { new, set_result });
+pub extern "C" fn register_plugin_impl(create: Create, set_result: SetResult) {
+  PLUGIN_IMPL.get_or_init(|| PluginImpl { create, set_result });
 }
 
 #[unsafe(no_mangle)]
 pub extern "C" fn create() -> *mut c_void {
   if let Some(methods) = PLUGIN_IMPL.get() {
-    (methods.new)()
+    (methods.create)()
   } else {
     ptr::null_mut()
   }
