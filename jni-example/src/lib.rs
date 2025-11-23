@@ -1,10 +1,22 @@
+#![feature(drop_guard)]
+use std::alloc::{Layout, dealloc};
+use std::mem::DropGuard;
+use std::ptr;
+
 use jni::JNIEnv;
 use jni::objects::{JObject, JValue};
 use jni::signature::{Primitive, ReturnType};
 use jni::sys::jint;
 
 pub fn hello() {
-  println!("Hello World!")
+  let str = Box::new("Hello World!");
+  let s = DropGuard::new(Box::into_raw(str), |s| unsafe {
+    ptr::drop_in_place(s);
+    dealloc(s.cast::<u8>(), Layout::new::<&str>());
+    println!("dropped");
+  });
+  println!("{}", unsafe { *(*s) });
+  println!("end");
 }
 
 #[unsafe(no_mangle)]
@@ -50,7 +62,10 @@ pub extern "system" fn Java_kt_lib_Plugin_setResult<'local>(
   plugin: JObject<'local>,
   result: jint,
 ) {
-  if let Ok(Ok(app)) = env.get_field(plugin, "app", "Lkt/lib/App;").map(|it| it.l()) {
+  if let Ok(Ok(app)) = env
+    .get_field(plugin, "app", "Lkt/lib/App;")
+    .map(|it| it.l())
+  {
     let _ = env.set_field(app, "sumResult", "I", JValue::Int(result));
   }
 }
