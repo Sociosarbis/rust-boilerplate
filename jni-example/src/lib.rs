@@ -1,6 +1,5 @@
-#![feature(drop_guard)]
 use std::alloc::{Layout, dealloc};
-use std::mem::DropGuard;
+use std::ops::{Deref, DerefMut};
 use std::ptr;
 
 use jni::JNIEnv;
@@ -8,14 +7,77 @@ use jni::objects::{JObject, JValue};
 use jni::signature::{Primitive, ReturnType};
 use jni::sys::jint;
 
+struct Pointer<T>
+where
+  *mut T: CallDrop,
+{
+  ptr: *mut T,
+}
+
+impl<T> Pointer<T>
+where
+  *mut T: CallDrop,
+{
+  fn new(ptr: *mut T) -> Self {
+    Pointer { ptr }
+  }
+
+  fn ptr(&self) -> *const T {
+    self.ptr
+  }
+
+  fn mut_ptr(&self) -> *mut T {
+    self.ptr
+  }
+}
+
+impl<T> Deref for Pointer<T>
+where
+  *mut T: CallDrop,
+{
+  type Target = T;
+
+  fn deref(&self) -> &Self::Target {
+    unsafe { &*self.ptr }
+  }
+}
+
+impl<T> DerefMut for Pointer<T>
+where
+  *mut T: CallDrop,
+{
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    unsafe { &mut *self.ptr }
+  }
+}
+
+trait CallDrop {
+  fn call_drop(self);
+}
+
+impl<T> Drop for Pointer<T>
+where
+  *mut T: CallDrop,
+{
+  fn drop(&mut self) {
+    <*mut T>::call_drop(self.ptr);
+  }
+}
+
+impl CallDrop for *mut &str {
+  fn call_drop(self) {
+    unsafe {
+      ptr::drop_in_place(self);
+      dealloc(self.cast::<u8>(), Layout::new::<&str>());
+      println!("dropped");
+    }
+  }
+}
+
 pub fn hello() {
   let str = Box::new("Hello World!");
-  let s = DropGuard::new(Box::into_raw(str), |s| unsafe {
-    ptr::drop_in_place(s);
-    dealloc(s.cast::<u8>(), Layout::new::<&str>());
-    println!("dropped");
-  });
-  println!("{}", unsafe { *(*s) });
+  let s = Pointer::new(Box::into_raw(str));
+  println!("{}", *s);
   println!("end");
 }
 
